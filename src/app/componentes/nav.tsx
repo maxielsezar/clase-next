@@ -19,6 +19,10 @@ const Nav = () => {
             link:"/direccion",
             texto:"ir a direccion"
         },
+           {
+            link:"/recursos",
+            texto:"ir a recursos"
+        },
     ]
 
   return (
@@ -32,5 +36,6 @@ const Nav = () => {
     </nav>
   )
 }
+
 
 export default Nav

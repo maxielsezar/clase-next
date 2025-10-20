@@ -1,11 +1,10 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="flex justify-between">
-      pagin principal
-   
+      pagina principal
+    <Link href="/tami">ir a ver a tami</Link>
    </div>
   );
 }
