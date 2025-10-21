@@ -1,6 +1,9 @@
+"use client"
 import React from 'react'
 import Masonry from '../componentes/Masonry';
 import Boton from '../componentes/Boton'
+import ScrollStack, { ScrollStackItem } from '../componentes/Carpetas'
+
 
 
 
@@ -71,8 +74,57 @@ const page = () => {
       text: "Carpinteria"
     },
     {
-      id: "9",
-      img: "https://www.bing.com/images/search?view=detailV2&ccid=pXl%2fTfwp&id=BB9EDA497352274A31583CCC3089A06FE6BC604A&thid=OIP.pXl_Tfwpygjf4pZntCYB2QHaE8&mediaurl=https%3a%2f%2fwww.pedroreyes.es%2fwp-content%2fuploads%2f2022%2f01%2fshutterstock_1892395513FILEminimizer.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.a5797f4dfc29ca08dfe29667b42601d9%3frik%3dSmC85m%252bgiTDMPA%26pid%3dImgRaw%26r%3d0&exph=667&expw=1000&q=reposteria&FORM=IRPRST&ck=661BE2500817D9DC6947EAEBD0CEA33E&selectedIndex=15&itb=0",
+      id: "10",
+      img: "https://www.bing.com/images/search?view=detailV2&ccid=kM%2bA90ij&id=CCCEF8F447A96091CF05934427F06246B0D964FD&thid=OIP.kM-A90ija6QYJnVDBVjxTwHaEK&mediaurl=https%3a%2f%2fcfp655esquel.edu.ar%2fcfp655%2fwp-content%2fuploads%2f2022%2f10%2fCFP655-ExpoEducativa-11.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.90cf80f748a36ba4182675430558f14f%3frik%3d%252fWTZsEZi8CdEkw%26pid%3dImgRaw%26r%3d0&exph=576&expw=1024&q=cfp+655+esquel&FORM=IRPRST&ck=2E2BB3656C0B7137C1241B3F61A5019C&selectedIndex=19&itb=0",
+      url: "",
+      height: 200,
+      text: "reposteria"
+    },
+    {
+      id: "11",
+      img: "",
+      url: "https://example.com/one",
+      height: 350,
+      text: "reposteria"
+    },
+    {
+      id: "12",
+      img: "",
+      url: "https://example.com/one",
+      height: 350,
+      text: "reposteria"
+    },
+    {
+      id: "13",
+      img: "",
+      url: "https://example.com/one",
+      height: 350,
+      text: "reposteria"
+    },
+    {
+      id: "14",
+      img: "",
+      url: "https://example.com/one",
+      height: 350,
+      text: "reposteria"
+    },
+    {
+      id: "15",
+      img: "",
+      url: "https://example.com/one",
+      height: 350,
+      text: "reposteria"
+    },
+    {
+      id: "17",
+      img: "",
+      url: "https://example.com/one",
+      height: 350,
+      text: "reposteria"
+    },
+    {
+      id: "16",
+      img: "",
       url: "https://example.com/one",
       height: 350,
       text: "reposteria"
@@ -98,16 +150,35 @@ const page = () => {
             />    
         </main>
     </div>
-    <div className="col-span-5 row-start-2">
-        <h1 className='text-center'>
+    <div className="col-span-5 row-start-2 pt-90">
+        <h1 className='text-center text-6xl overline'>
             Súmate a nuestra comunidad
         </h1>
-        <h2 className='text-center'>
+        <br />
+        <h2 className='text-center text-4xl'>
             Somos una plataforma diseñada para unir empresarios de Esquel y Trevelin con talento calificado, formado en el CFP N° 655. En simples pasos y 100% GRATIS.
         </h2>
-
-          
+        <br />
+         <div className=' '>
+          <Boton />
+          <Boton />
     </div>
+    </div>
+   
+          <ScrollStack>
+        <ScrollStackItem>
+          <h2>Card 1</h2>
+          <p>This is the first card in the stack</p>
+        </ScrollStackItem>
+        <ScrollStackItem>
+          <h2>Card 2</h2>
+          <p>This is the second card in the stack</p>
+        </ScrollStackItem>
+        <ScrollStackItem>
+          <h2>Card 3</h2>
+          <p>This is the third card in the stack</p>
+        </ScrollStackItem>
+      </ScrollStack>
 </div>
     
 </>
