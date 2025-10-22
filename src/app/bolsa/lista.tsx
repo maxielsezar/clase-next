@@ -1,3 +1,4 @@
+"use client"
 import React, { useRef, useState, useEffect, ReactNode, MouseEventHandler, UIEvent } from 'react';
 import { motion, useInView } from 'motion/react';
 
@@ -7,6 +8,12 @@ interface AnimatedItemProps {
   index: number;
   onMouseEnter?: MouseEventHandler<HTMLDivElement>;
   onClick?: MouseEventHandler<HTMLDivElement>;
+}
+
+interface Trabajo{
+  puesto:string;
+  lugar:string;
+  fecha:string;
 }
 
 const AnimatedItem: React.FC<AnimatedItemProps> = ({ children, delay = 0, index, onMouseEnter, onClick }) => {
@@ -29,8 +36,8 @@ const AnimatedItem: React.FC<AnimatedItemProps> = ({ children, delay = 0, index,
 };
 
 interface AnimatedListProps {
-  items?: string[];
-  onItemSelect?: (item: string, index: number) => void;
+  items?: Trabajo[];
+  onItemSelect?: (item: Trabajo, index: number) => void;
   showGradients?: boolean;
   enableArrowNavigation?: boolean;
   className?: string;
@@ -41,21 +48,11 @@ interface AnimatedListProps {
 
 const AnimatedList: React.FC<AnimatedListProps> = ({
   items = [
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
-    'Item 6',
-    'Item 7',
-    'Item 8',
-    'Item 9',
-    'Item 10',
-    'Item 11',
-    'Item 12',
-    'Item 13',
-    'Item 14',
-    'Item 15'
+    'Maestro panadero',
+    'Electricista montador',
+    'Gasista',
+    'Encargado de mantenimiento de edificio',
+    'Auxiliar de cocina',
   ],
   onItemSelect,
   showGradients = true,
@@ -126,10 +123,11 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
   }, [selectedIndex, keyboardNav]);
 
   return (
-    <div className={`relative w-[500px] ${className}`}>
+  
+    <div className={`relative w-[800px] ${className}`}>
       <div
         ref={listRef}
-        className={`max-h-[400px] overflow-y-auto p-4 ${
+        className={`max-h-[600px] overflow-y-auto p-4 ${
           displayScrollbar
             ? '[&::-webkit-scrollbar]:w-[8px] [&::-webkit-scrollbar-track]:bg-[#060010] [&::-webkit-scrollbar-thumb]:bg-[#222] [&::-webkit-scrollbar-thumb]:rounded-[4px]'
             : 'scrollbar-hide'
@@ -153,8 +151,10 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
               }
             }}
           >
-            <div className={`p-4 bg-[#111] rounded-lg ${selectedIndex === index ? 'bg-[#222]' : ''} ${itemClassName}`}>
-              <p className="text-white m-0">{item}</p>
+            <div className={`p-4 h-50 bg-[#111] rounded-lg ${selectedIndex === index ? 'bg-[#222]' : ''} ${itemClassName}`}>
+              <p className="text-white m-0">{item.puesto}</p>
+              <p className="text-white m-0">{item.lugar}</p>
+              <p className="text-white m-0">{item.fecha}</p>
             </div>
           </AnimatedItem>
         ))}
