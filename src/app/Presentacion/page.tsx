@@ -1,10 +1,8 @@
 "use client"
 import React from 'react'
 import Masonry from '../componentes/Masonry';
-import Boton from '../componentes/Boton'
-import ScrollStack, { ScrollStackItem } from '../componentes/Carpetas'
-
-
+import Boton from '../componentes/Boton';
+import Boton2 from '../componentes/boton2'
 
 
 const page = () => {
@@ -150,7 +148,7 @@ const page = () => {
             />    
         </main>
     </div>
-    <div className="col-span-5 row-start-2 pt-90">
+    <div className="col-span-5 row-start-2 pt-60">
         <h1 className='text-center text-6xl overline'>
             Súmate a nuestra comunidad
         </h1>
@@ -163,22 +161,13 @@ const page = () => {
           <Boton />
           <Boton />
     </div>
+    <br />
+    <div className='items-baseline'>
+      <Boton2 />
+
     </div>
-   
-          <ScrollStack>
-        <ScrollStackItem>
-          <h2>Card 1</h2>
-          <p>This is the first card in the stack</p>
-        </ScrollStackItem>
-        <ScrollStackItem>
-          <h2>Card 2</h2>
-          <p>This is the second card in the stack</p>
-        </ScrollStackItem>
-        <ScrollStackItem>
-          <h2>Card 3</h2>
-          <p>This is the third card in the stack</p>
-        </ScrollStackItem>
-      </ScrollStack>
+    </div>
+
 </div>
     
 </>
