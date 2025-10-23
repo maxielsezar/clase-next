@@ -52,6 +52,7 @@ export default function RegistroEmpresario() {
 src="/logo.jpg"
 width={200}
 height={110}
+alt="logo"
 className="center"
 />
 </div>
@@ -62,6 +63,7 @@ className="center"
 src="/logo.jpg"
 width={200}
 height={110}
+alt="logo"
 className="center"
 />
 </div>
