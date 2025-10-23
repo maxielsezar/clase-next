@@ -6,13 +6,13 @@ import ButtonSesion from '@/app/componentes/ButtonSesion'
 export default function Header() {
   return (
     <>
-    
       <div className="flex justify-around mt-10">
-        <Image src="/cfp655.png" width={200} height={30} alt="hola"  />
+        <Image src="/cfp655.png" width={200} height={10} alt="hola"  />
         <Radio/>
         <Radio2/>
         <ButtonSesion/>
       </div>
+      <p> Bolsa de Trabajo </p>
     </>
   );
 }
