@@ -9,8 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "gsap": "^3.13.0",
     "next": "15.5.5",
+=======
+    "next": "15.5.5",
+    "next-auth": "^4.24.11",
+>>>>>>> 43fb32daf697dac610627256eb46495986434da6
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },
