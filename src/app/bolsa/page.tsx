@@ -1,12 +1,15 @@
 "use client";
 import React, { useState } from "react";
 import AnimatedList from "./lista";
+import Cambio from "@/app/componentes/cambio";
 
 interface Trabajo{
   puesto:string;
   lugar:string;
   fecha:string;
 }
+
+
 
 const empleos:Trabajo[] = [
   { puesto: "Maestro panadero", lugar: "Panadero – ESQUEL", fecha: "Publicado 17/08/2025" },
@@ -24,12 +27,13 @@ export default function Page() {
     filtro === "Todos los puestos" ? empleos : empleos.filter((e) => e.puesto === filtro);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-[#060010] text-white p-6">
-      <div className="flex flex-col items-center justify-center bg-[#0b001d] rounded-3xl shadow-2xl p-10 w-full ">
+   
+   <div className="min-h-screen flex flex-col items-center justify-center bg-[#000000] text-white p-6">
+      <div className="flex flex-col items-center justify-center bg-[#000000] rounded-3xl shadow-2xl p-10 w-full ">
         <h1 className="text-6xl font-bold mb-8 text-blue-400">Bolsa de empleo</h1>
 
         <p className="text-2xl mb-4">Filtrar por puesto</p>
-        <p className="text-2xl mb-4 text-blue-400">Todos los puestos</p>
+        <button className="text-2xl mb-4 text-blue-400">Todos los puestos ▼</button>
         <select
           value={filtro}
           onChange={(e) => setFiltro(e.target.value)}
@@ -44,6 +48,7 @@ export default function Page() {
         {
 
         }
+       
         <AnimatedList
           items={empleosFiltrados}
           showGradients={true}
@@ -51,6 +56,8 @@ export default function Page() {
           displayScrollbar={true}
         />
       </div>
+        <Cambio/>   
+   
     </div>
   );
 }
