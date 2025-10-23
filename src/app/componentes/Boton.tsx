@@ -12,7 +12,7 @@ const Button = () => {
 
 const StyledWrapper = styled.div`
   button {
-    --green: #1BFD9C;
+    --green: #00000;
     font-size: 35px;
     padding: 0.7em 2.7em;
     letter-spacing: 0.06em;
@@ -23,13 +23,13 @@ const StyledWrapper = styled.div`
     transition: all 0.3s;
     line-height: 1.4em;
     border: 2px solid var(--green);
-    background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%);
-    color: var(--green);
+   background: #2A7B9B;
+background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 165, 199, 0.92) 50%, rgba(138, 233, 255, 1) 100%);color: var(--green);
     box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
   }
 
   button:hover {
-    color: #82ffc9;
+    color: #474747;
     box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
   }
 

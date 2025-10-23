@@ -3,7 +3,9 @@ import React from 'react'
 import Masonry from '../componentes/Masonry';
 import Boton from '../componentes/Boton';
 import Boton2 from '../componentes/boton2'
-
+import BatciBoton from '../componentes/BatciBoton'
+import { BsBriefcaseFill } from "react-icons/bs";
+import { BsMegaphoneFill } from "react-icons/bs";
 
 const page = () => {
 
@@ -52,79 +54,79 @@ const page = () => {
     },
     {
       id: "8",
-      img: "https://www.bing.com/images/search?view=detailV2&ccid=gAbYw2th&id=17A9E939AB8610F303603B6920A2135DA834BD88&thid=OIP.gAbYw2th6pmFXzaFBXGaPwHaDg&mediaurl=https%3a%2f%2faceroscrea.com%2fwp-content%2fuploads%2f2023%2f02%2fforjado-de-solera-al-rojo-vivo-con-martillo.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.8006d8c36b61ea99855f368505719a3f%3frik%3diL00qF0ToiBpOw%26pid%3dImgRaw%26r%3d0&exph=350&expw=740&q=herreria&FORM=IRPRST&ck=258CBB9379AE0AE237F04FB326990C90&selectedIndex=22&itb=0",
+      img: "https://th.bing.com/th/id/OIP.VPVCMqHNeHZEeLYxxDk56QHaE8?o=7&cb=12rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
       url: "https://example.com/one",
       height: 450,
       text: "Herreria"
     },
     {
       id: "7",
-      img: "https://www.bing.com/images/search?view=detailV2&ccid=S6c99C%2f2&id=A94CAD7725DEFB4A3070ABE387B838277F8E690F&thid=OIP.S6c99C_2YOXJLNqtdm15SwHaE8&mediaurl=https%3a%2f%2fwww.65ymas.com%2fuploads%2fs1%2f16%2f41%2f12%2ffood-and-fun.jpeg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.4ba73df42ff660e5c92cdaad766d794b%3frik%3dD2mOfyc4uIfjqw%26pid%3dImgRaw%26r%3d0&exph=1001&expw=1500&q=clases+de+cocina+&FORM=IRPRST&ck=F32DC7C97E2021AACB480BD52C3CA551&selectedIndex=2&itb=0",
+      img: "https://th.bing.com/th/id/OIP.E5gG5kKvN0yU1rhnCme3BwHaE8?o=7&cb=12rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
       url: "https://example.com/one",
       height: 250,
       text: "Cocina"
     },
     {
       id: "9",
-      img: "https://www.bing.com/images/search?view=detailV2&ccid=M8b6MeD4&id=01BF5566825E035840EBA57BD08CA6C38583285A&thid=OIP.M8b6MeD41vEjvknudTIiigHaE3&mediaurl=https%3a%2f%2fbdnplus.com%2fwp-content%2fuploads%2f2015%2f06%2fCarpinteria.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.33c6fa31e0f8d6f123be49ee7532228a%3frik%3dWiiDhcOmjNB7pQ%26pid%3dImgRaw%26r%3d0&exph=800&expw=1216&q=carpinteria&FORM=IRPRST&ck=141E48C7D0FFB628F1FAFC627D4A1891&selectedIndex=17&itb=0",
+      img: "https://tse3.mm.bing.net/th/id/OIP.uEVDOxteKrfDzOEFvtj5awHaE8?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
       url: "https://example.com/one",
       height: 350,
       text: "Carpinteria"
     },
     {
       id: "10",
-      img: "https://www.bing.com/images/search?view=detailV2&ccid=kM%2bA90ij&id=CCCEF8F447A96091CF05934427F06246B0D964FD&thid=OIP.kM-A90ija6QYJnVDBVjxTwHaEK&mediaurl=https%3a%2f%2fcfp655esquel.edu.ar%2fcfp655%2fwp-content%2fuploads%2f2022%2f10%2fCFP655-ExpoEducativa-11.jpg&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.90cf80f748a36ba4182675430558f14f%3frik%3d%252fWTZsEZi8CdEkw%26pid%3dImgRaw%26r%3d0&exph=576&expw=1024&q=cfp+655+esquel&FORM=IRPRST&ck=2E2BB3656C0B7137C1241B3F61A5019C&selectedIndex=19&itb=0",
+      img: "https://th.bing.com/th/id/OIP.98wfOwTZQ5iKPiuY--PRpAHaE9?o=7&cb=12rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
       url: "",
       height: 200,
       text: "reposteria"
     },
     {
       id: "11",
-      img: "",
+      img: "https://tse2.mm.bing.net/th/id/OIP.5WYGLCWIKX-po472aL9wPAAAAA?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
       url: "https://example.com/one",
       height: 350,
       text: "reposteria"
     },
     {
       id: "12",
-      img: "",
+      img: "https://tse1.mm.bing.net/th/id/OIP.AyWAJ_u395sN8lclg-kwUgHaE7?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
       url: "https://example.com/one",
-      height: 350,
+      height: 250,
       text: "reposteria"
     },
     {
       id: "13",
-      img: "",
+      img: "https://th.bing.com/th/id/OIP.GEEcs7sTP5vbOzKxKXWiqAHaE8?o=7&cb=12rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
       url: "https://example.com/one",
-      height: 350,
+      height: 450,
       text: "reposteria"
     },
     {
       id: "14",
-      img: "",
+      img: "https://cdn.euroinnova.edu.es/img/subidasEditor/herreria-1598279096.jpg",
       url: "https://example.com/one",
       height: 350,
       text: "reposteria"
     },
     {
       id: "15",
-      img: "",
+      img: "https://th.bing.com/th/id/OIP.YogMvsYk7mbmGQrMHuowEQHaE8?o=7&cb=12rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
       url: "https://example.com/one",
-      height: 350,
+      height: 600,
       text: "reposteria"
     },
     {
       id: "17",
-      img: "",
+      img: "https://tse1.mm.bing.net/th/id/OIP.ZQpYrA7BHzPRGVOnwTj5AQHaE8?cb=12&w=1500&h=1001&rs=1&pid=ImgDetMain&o=7&rm=3",
       url: "https://example.com/one",
-      height: 350,
+      height: 550,
       text: "reposteria"
     },
     {
       id: "16",
-      img: "",
+      img: "https://tse3.mm.bing.net/th/id/OIP.Rk3O1rWrKLL9PcESUoBHuwHaE8?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
       url: "https://example.com/one",
-      height: 350,
+      height: 300,
       text: "reposteria"
     },
     // ... more items
@@ -132,7 +134,7 @@ const page = () => {
   return (
     <>
 
-<div className="grid grid-cols-5 grid-rows-2 gap-4">
+<div className="grid grid-cols-5 grid-rows-2 gap-4 text-black bg-white flex justify-center">
     <div className="col-span-5">
         <main className='h-max'>
             <Masonry
@@ -148,7 +150,7 @@ const page = () => {
             />    
         </main>
     </div>
-    <div className="col-span-5 row-start-2 pt-60">
+    <div className="col-span-5 row-start-2 pt-0">
         <h1 className='text-center text-6xl overline'>
             Súmate a nuestra comunidad
         </h1>
@@ -157,12 +159,43 @@ const page = () => {
             Somos una plataforma diseñada para unir empresarios de Esquel y Trevelin con talento calificado, formado en el CFP N° 655. En simples pasos y 100% GRATIS.
         </h2>
         <br />
-         <div className=' '>
+         <div className=''>
           <Boton />
+          <br />
           <Boton />
     </div>
+    <div className='bg-blue-300 rounded-xl h-60 w-200 text-4xl'>
+        <div className='m-6'>
+          <BsBriefcaseFill />
+        <h1 className='text-5xl'>
+          Contratá personal
+        </h1>
+        <p>
+          ¿Necesitas personal capacitado para que trabaje en tu 
+            negocio/empresa? ¡Publicá tus ofertas en un aquí!
+        </p>
+        </div>
+    </div>
+    <div className='bg-blue-300 rounded-xl h-60 w-200 text-4xl'>
+        <div className='m-6'>
+          <BsMegaphoneFill />
+        <h1 className='text-5xl'>
+          Difundí a la comunidad
+        </h1>
+        <p>
+          ¿Estás vendiendo tu fondo de comercio? ¿Queres vender 
+         mobiliario de tu negocio? ¡hacéselo saber a tus colegas!
+        </p>
+        </div>
+    </div>
     <br />
-    <div className='items-baseline'>
+    <BatciBoton />
+    <br />
+    <h2 className='text-4xl'>
+      COMO POSTULANTE
+    </h2>
+    <br />
+    <div className='flex justify-center'>
       <Boton2 />
 
     </div>
