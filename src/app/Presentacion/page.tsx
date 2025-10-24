@@ -1,9 +1,9 @@
 "use client"
 import React from 'react'
-import Masonry from '../componentes/Masonry';
-import Boton from '../componentes/Boton';
-import Boton2 from '../componentes/boton2'
-import BatciBoton from '../componentes/BatciBoton'
+import Masonry from '@/app/componentes/Masonry';
+import Boton from '@/app/componentes/Boton';
+import Boton2 from '@/app/componentes/boton2'
+import BatciBoton from '@/app/componentes/BatciBoton'
 import { BsBriefcaseFill } from "react-icons/bs";
 import { BsMegaphoneFill } from "react-icons/bs";
 
@@ -134,7 +134,7 @@ const page = () => {
   return (
     <>
 
-<div className="grid grid-cols-5 grid-rows-2 gap-4 text-black bg-white flex justify-center">
+<div className="grid-cols-5 grid-rows-2 gap-4 text-black bg-white flex justify-center">
     <div className="col-span-5">
         <main className='h-max'>
             <Masonry
