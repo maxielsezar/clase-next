@@ -131,8 +131,12 @@ const page = () => {
     },
     // ... more items
 ];
+    export default function Home()
+
+    fetch 
   return (
     <>
+
 
 <div className="grid-cols-5 grid-rows-2 gap-4 text-black bg-white flex justify-center">
     <div className="col-span-5">
