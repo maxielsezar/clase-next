@@ -11,13 +11,20 @@ async function main() {
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
-app.get('/', (req, res) => {
-  res.send ('Hello World!' )
-})
+app.route('/book')
+  .get((req, res) => {
+    res.send('Get a random book')
+  })
+  .post((req, res) => {
+    res.send('Add a book')
+  })
+  .put((req, res) => {
+    res.send('Update the book')
+  })
+  .delete((req, res) => {
+    res.send('delete the book')
+  })
 
-app.get('/usuario', (req, res) => {
-  res.send ({nombre:'usuario1', apellido: 'Hello World!' })
-})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

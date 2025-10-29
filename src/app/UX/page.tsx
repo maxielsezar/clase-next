@@ -7,23 +7,24 @@ import ListadoEmpleos from '@/app/componentes/ListadoEmpleos'
 import { useState, useEffect } from 'react' 
 
 
+
 const page = () => {
   const [filtro,setFiltro]=useState('')
   
   const [data,setData]=useState('')
 
   useEffect (()=> {
-    const fetchData = async ()=>{
+    const axios = require('axios');
+    async function getUser(){
       try{
-        const response = await fetch ("http://localhost:4000/");
+        const response = await axios.get('/user?ID=12345');
+        console.log (response);
 
-        const jsonData =await response.json ();
-        setData (jsonData);
       } catch (error) {
-        console.error ("Error fetching data:", error);
+        console.error (error);
       }
     };
-    fetchData ();
+    getUser ();
   }, []);
 //mongodb+srv://naticayul_db_user:GqHsLJpHq6fa6Btl@cluster0.lnaccnw.mongodb.net/?appName=Cluster0
   return (
