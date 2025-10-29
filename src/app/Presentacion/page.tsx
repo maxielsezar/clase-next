@@ -6,7 +6,7 @@ import Boton2 from '@/app/componentes/boton2'
 import BatciBoton from '@/app/componentes/BatciBoton'
 import { BsBriefcaseFill } from "react-icons/bs";
 import { BsMegaphoneFill } from "react-icons/bs";
-
+const axios = require('axios');
 const page = () => {
 
      const items = [
@@ -132,6 +132,14 @@ const page = () => {
     // ... more items
 ];
     export default function Home()
+    async function getUser() {
+  try {
+    const response = await axios.get('/user?ID=12345');
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+}
 
     fetch 
   return (
