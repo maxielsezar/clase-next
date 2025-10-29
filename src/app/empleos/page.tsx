@@ -131,6 +131,9 @@ const items = [
 <br />
 <p><b>El Centro de Formación Profesional N° 655</b> ha crecido exponencialmente desde su creación, llegando en la actualidad a capacitar a más de 700 individuos por año, que de esta forma logran acceder a un trabajo o mejorar su situación laboral, cumpliendo de esta manera con la premisa fundamental de la Formación Profesional: <b>Capacitar a las personas para el desempeño cualificado en las distintas profesiones, posibilitando el acceso al empleo o a una mejor posición laboral, logrando así una participación activa de las mismas en la vida social, cultural y económica.</b></p>
 <br />
+
+
+
 <h1> <b>Cursos para realizar:</b></h1>
 <br />
   <li> <b>Mantenimiento y Reparacion de Equipos Informaticos</b></li>
