@@ -8,16 +8,23 @@ const port = 4005
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://mongodb+srv://ibanezenzo18_db_user:<b6bbEnULzcbXunO>@cluster0.xpflumw.mongodb.net/?appName=Cluster0');
+  await mongoose.connect("mongodb+srv://ibanezenzo18_db_user:gLuAtWEhflxU6i5I@cluster0.xpflumw.mongodb.net/?appName=Cluster0");
  }
 
- app.get('/', (req, res) => {
-  res.send('Hello World holaa!')
-})
+app.route('/book')
+  .get((req, res) => {
+    res.send('Get a random book')
+  })
+  .post((req, res) => {
+    res.send('Add a book')
+  })
+  .put((req, res) => {
+    res.send('Update the book')
+  })
 
- app.get('/usuario', (req, res) => {
-  res.send({nombre :'usuario1'})
-})
+.delete((req, res) => {
+    res.send('delete the book')
+  })
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

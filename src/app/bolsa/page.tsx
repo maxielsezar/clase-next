@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import AnimatedList from "./lista";
 import Cambio from "@/app/componentes/cambio";
+const axios = require('axios').default;
 
 interface Trabajo{
   puesto:string;
@@ -26,12 +27,24 @@ export default function Page() {
   const empleosFiltrados =
     filtro === "Todos los puestos" ? empleos : empleos.filter((e) => e.puesto === filtro);
 
+    async function getUser() {
+  try {
+    const response = await axios.get('/user?ID=12345');
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
   return (
+   
    
    <div className="min-h-screen flex flex-col items-center justify-center bg-[#000000] text-white p-6">
       <div className="flex flex-col items-center justify-center bg-[#000000] rounded-3xl shadow-2xl p-10 w-full ">
+       <div className="flex w-full justify-start"><img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUox8lN0fO1Vu2YJ4DnnLuRG6azoac3Fkjgg&s" alt="" />
+       </div>
         <h1 className="text-6xl font-bold mb-8 text-blue-400">Bolsa de empleo</h1>
-
+       
         <p className="text-2xl mb-4">Filtrar por puesto</p>
         <button className="text-2xl mb-4 text-blue-400">Todos los puestos ▼</button>
         <select
