@@ -73,7 +73,7 @@ className="center"
         onSubmit={handleSubmit}
         className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-2xl"
       >
-        <h1 className="text-2xl font-semibold mb-6 text-center text-gray-800">
+        <h1 className="text-2xl font-semibold mb-6 text-center text-blue-900">
           Crear cuenta de empresario
         </h1>
 

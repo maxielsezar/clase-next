@@ -5,27 +5,28 @@ import Image from "next/image";
 export default function PrivacidadPage() {
   return (
     <div className="max-w-4xl mx-auto px-6 py-12 text-gray-800 justify-center">
+  
       <h1 className="text-3xl font-bold mb-6 text-red-800 text-center">Política de Privacidad</h1>
       <p className="text-sm text-gray-500 mb-8 text-center">Última actualización: 23 de octubre de 2025</p>
 
 
-<div className="absolute top-15 left-10 ">
+<div className="absolute top-40 left-5 ">
 
 <Image
 src="/logo.jpg"
-width={150}
-height={100}
+width={200}
+height={110}
 alt="logo"
 className="center"
 />
 </div>
 
-<div className="absolute top-15 right-10 ">
+<div className="absolute top-40 right-5 ">
 
 <Image
 src="/logo.jpg"
-width={150}
-height={100}
+width={200}
+height={110}
 alt="logo"
 className="center"
 />
@@ -115,5 +116,6 @@ className="center"
         </div>
       </section>
     </div>
+
   );
 }

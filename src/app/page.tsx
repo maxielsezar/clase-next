@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from 'react'
 
 
+
 //https://github.com/santiskrr/portfolio/blob/main/app/components/LinkPreview.tsx
 export default function Home() {
 
@@ -10,25 +11,23 @@ export default function Home() {
 
   useEffect(() => {
 
-const fetchData = async () => {
+const axios = require('axios');
 
-try {
+async function getUser() {
+  
+  try {
+    const response = await axios.get('/user?ID=12345');
+    console.log(response);
+    const jsonData = await response.json();
 
-const response = await fetch (`https://thesimpsonsapi.com/api/characters?page=${pagina}`);
-const jsonData = await response.json();
 setData (jsonData.results);
+  } catch (error) {
+    console.error(error);
+  }
+  }
 
-}  
-
-catch (error) {
-
-  console.log("Error fetching data:", error);
-
-};
-}
-)
-fetchData();
-
+getUser ();
+}, []);
 
   return (
     <div className="flex justify-between">
