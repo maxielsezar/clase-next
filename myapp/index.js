@@ -26,6 +26,9 @@ app.route('/book')
     res.send('delete the book')
   })
 
+.put((req, res) => {
+    res.send('actualizar usuario')
+  })
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })

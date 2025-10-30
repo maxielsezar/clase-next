@@ -38,9 +38,9 @@ export default function Page() {
 
   return (
    
-   
-   <div className="min-h-screen flex flex-col items-center justify-center bg-[#000000] text-white p-6">
-      <div className="flex flex-col items-center justify-center bg-[#000000] rounded-3xl shadow-2xl p-10 w-full ">
+    
+   <div className="min-h-screen flex flex-col items-center justify-center bg-[#ffffff] text-white p-6">
+      <div className="flex flex-col items-center justify-center bg-[#ffffff] rounded-3xl shadow-2xl p-10 w-full ">
        <div className="flex w-full justify-start"><img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUox8lN0fO1Vu2YJ4DnnLuRG6azoac3Fkjgg&s" alt="" />
        </div>
         <h1 className="text-6xl font-bold mb-8 text-blue-400">Bolsa de empleo</h1>
