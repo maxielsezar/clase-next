@@ -29,14 +29,9 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-<<<<<<< HEAD
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
 
 <Providers>
-=======
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
->>>>>>> feat/ux3
         {children}
 </Providers>
       </body>

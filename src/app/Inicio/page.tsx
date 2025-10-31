@@ -1,13 +1,30 @@
 'use client'
-import React ,{ useState } from 'react'
+import React ,{ useState, useEffect } from 'react'
 import { IoEyeSharp } from "react-icons/io5";
-import { FaEyeSlash } from "react-icons/fa";
-
+import { FaEyeSlash } from "react-icons/fa"; 
+import axios from 'axios';
 import './contenido.css'
 
 const page = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState(''); 
+  
+      const [data,setData]= useState('')
+  
+      useEffect(() => {
+      const axios = require('axios'); 
+      async function getUser() {
+        try {
+        const response = await axios.get('/user?ID=12345');
+        console.log(response);
+        } catch (error) {
+        console.error(error);
+  };
+      getUser(); }
+      }, []); 
+
+
+
   const handleGoogleSignIn = () => {
     console.log('Iniciando sesión con Google');
   }
@@ -18,8 +35,9 @@ const page = () => {
 
 return ( 
   <>
-    <div className='titulo'>
-      <img className='logo' src="https://cfp655esquel.edu.ar/cfp655/wp-content/uploads/2016/04/CFP-N%C2%BA-655-Blanco.png" />
+    <div>
+      <img className='logo1' src="/CFP-Nº-655-Blanco.png" />
+      <h1>CENTRO DE FORMACIÓN Nº655</h1>
     </div>
     <div className='contenido'>
       <h2>Iniciar Sesión</h2>
