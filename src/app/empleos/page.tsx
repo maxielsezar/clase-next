@@ -3,6 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Masonry from '@/app/componentes/Masorny'
+import Styledcomponent from '@/app/componentes/Styledcomponent'
 
 
 const page = () => {
@@ -132,9 +133,9 @@ const items = [
 <p><b>El Centro de Formación Profesional N° 655</b> ha crecido exponencialmente desde su creación, llegando en la actualidad a capacitar a más de 700 individuos por año, que de esta forma logran acceder a un trabajo o mejorar su situación laboral, cumpliendo de esta manera con la premisa fundamental de la Formación Profesional: <b>Capacitar a las personas para el desempeño cualificado en las distintas profesiones, posibilitando el acceso al empleo o a una mejor posición laboral, logrando así una participación activa de las mismas en la vida social, cultural y económica.</b></p>
 <br />
 
+  <div className='h-62 w-250 bg-[url(https://cfp655esquel.edu.ar/cfp655/wp-content/uploads/2022/03/Cabezal-Cursos.jpg)]'></div>
 
-
-<h1> <b>Cursos para realizar:</b></h1>
+<h1> <b>Cursos :</b></h1>
 <br />
   <li> <b>Mantenimiento y Reparacion de Equipos Informaticos</b></li>
   <br />
@@ -215,8 +216,23 @@ const items = [
 </>
       
   )
+
+  
+
+  
   
 }
+
+const Button = () => {
+  return (
+    <StyledWrapper>
+      <button className="boton-elegante">Inscribirse
+      </button>
+    </StyledWrapper>
+  );
+}
+
+
 
 
 export default page

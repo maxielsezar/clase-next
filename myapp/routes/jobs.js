@@ -10,8 +10,8 @@ router.get('/', async (req, res,) => {
   res.json(Trabajos)
 });
 router.post('/', async function(req, res, next) {
-  const {descripcion, estilo, habilidades, fechaDeNacimiento} = req.body
-  const nuevoTrabajos = await Trabajos.create({descripcion, estilo, habilidades, fechaDeNacimiento })
+  const {nombre, apellido} = req.body
+  const nuevoTrabajos = await Trabajos.create({nombre, apellido })
   res.status(201).json(nuevoTrabajos)
 });
 router.put('/', function(req, res, next) {
