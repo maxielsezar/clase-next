@@ -131,7 +131,6 @@ const page = () => {
     },
     // ... more items
 ];
-    export default function Home()
     async function getUser() {
   try {
     const response = await axios.get('/user?ID=12345');
@@ -146,7 +145,7 @@ const page = () => {
     <>
 
 
-<div className="grid-cols-5 grid-rows-2 gap-4 text-black bg-white flex justify-center">
+<div className=" bg-black text-white flex justify-center text-center items-center pt-1">
     <div className="col-span-5">
         <main className='h-max'>
             <Masonry
@@ -162,24 +161,26 @@ const page = () => {
             />    
         </main>
     </div>
-    <div className="col-span-5 row-start-2 pt-0">
+    <div className="pt-0">
         <h1 className='text-center text-6xl overline'>
             Súmate a nuestra comunidad
+            hgjkjdfljdlifv
+            sdllñfmpdkrmfpmv
         </h1>
         <br />
         <h2 className='text-center text-4xl'>
             Somos una plataforma diseñada para unir empresarios de Esquel y Trevelin con talento calificado, formado en el CFP N° 655. En simples pasos y 100% GRATIS.
         </h2>
         <br />
-         <div className=''>
+         <div className='items-center'>
           <Boton />
           <br />
           <Boton />
     </div>
-    <div className='bg-blue-300 rounded-xl h-60 w-200 text-4xl'>
-        <div className='m-6'>
+    <div className='bg-blue-300 rounded-xl h-60 w-full text- text-center items-center'>
+        <div className='m-6 items-center'>
           <BsBriefcaseFill />
-        <h1 className='text-5xl'>
+        <h1 className='text-5xl text-center'>
           Contratá personal
         </h1>
         <p>
@@ -188,7 +189,7 @@ const page = () => {
         </p>
         </div>
     </div>
-    <div className='bg-blue-300 rounded-xl h-60 w-200 text-4xl'>
+    <div className='bg-blue-300 rounded-xl h-60 w-full text-4xl text-center items-center'>
         <div className='m-6'>
           <BsMegaphoneFill />
         <h1 className='text-5xl'>
