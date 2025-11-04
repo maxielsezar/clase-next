@@ -15,7 +15,7 @@ const page = () => {
       const axios = require('axios'); 
       async function getUser() {
         try {
-        const response = await axios.get('/user?ID=12345');
+        const response = await axios.get('https://bolsa-de-empleo-cfp.vercel.app/api/applicants');
         console.log(response);
         } catch (error) {
         console.error(error);
