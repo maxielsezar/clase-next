@@ -134,7 +134,8 @@ const items = [
 <br />
 
   <div className='h-62 w-250 bg-[url(https://cfp655esquel.edu.ar/cfp655/wp-content/uploads/2022/03/Cabezal-Cursos.jpg)]'></div>
-
+<br />
+<br />
 <h1> <b>Cursos :</b></h1>
 <br />
   <li> <b>Mantenimiento y Reparacion de Equipos Informaticos</b></li>
