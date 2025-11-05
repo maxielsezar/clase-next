@@ -17,10 +17,14 @@ export default function Home() {
   } catch (error) {
     console.error(error);
   }
+
 }
+
+
   return (
     <div className="flex justify-between">
 
+      
       
    
     <Link href="/gabi">Ir a ver gabi</Link>
