@@ -6,19 +6,24 @@ import ListadoEmpleos from '@/app/componentes/ListadoEmpleos'
 
 import { useState, useEffect } from 'react' 
 
-
+interface job{
+  title: string,
+  description: string,
+  company: string,
+  location: string
+}
 
 const page = () => {
   const [filtro,setFiltro]=useState('')
   
-  const [data,setData]=useState('')
+  const [data,setData]=useState([])
 
   useEffect (()=> {
     const axios = require('axios');
     async function getUser(){
       try{
-        const response = await axios.get('/user?ID=12345');
-        console.log (response);
+        const response = await axios.get('https://bolsa-de-empleo-cfp.vercel.app/api/jobs');
+        setData(response);
 
       } catch (error) {
         console.error (error);
@@ -32,7 +37,11 @@ const page = () => {
       <Header/>
       <p className="text-black text-5xl text-center mt-10 mb-20"> Bolsa de empleo </p>
       <Main />
-      <h1>{data}</h1>
+      {data.map((item)=>{<h1>{
+        item.title
+      }</h1>
+
+      })}
       <ListadoEmpleos />
     </div>
 
