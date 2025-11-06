@@ -73,7 +73,7 @@ className="center"
         className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-2xl"
       >
         <h1 className="text-2xl font-semibold mb-6 text-center text-blue-900">
-          Crear cuenta de aplicante
+          Crear cuenta de usuario
         </h1>
 
   
@@ -155,26 +155,7 @@ className="center"
           />
         </div>
 
-      
   
-  
-
-          <select
-            name="rubro"
-            value={form.rubro}
-            onChange={handleChange}
-            required
-            className="border p-2 rounded-lg w-full text-gray-700"
-          >
-            <option value="">Seleccionar rubro a aplicar</option>
-            <option value="Restaurante">Restaurante</option>
-            <option value="Cafetería">Cafetería</option>
-            <option value="Pastelería">Pastelería</option>
-            <option value="Proveedor">Proveedor</option>
-            <option value="Otro">Otro</option>
-          </select>
-  
-
 
         {/* ACEPTACIÓN */}
         <label className="flex items-center text-sm mb-6 p-10">
