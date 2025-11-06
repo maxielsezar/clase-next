@@ -9,7 +9,7 @@ const page = () => {
     <div className='contenido'>
     <img className='logo1' src="/CFP-Nº-655-Blanco.png" />
       <h2>¿Olvidaste tu contraseña?</h2>
-      <p>Introduce tu número de teléfono o tu dirección de correo electrónico de recuperación</p>   
+      <p>Introduce tu número de Celular o tu dirección de correo electrónico de recuperación</p>   
         <form>          
             <label htmlFor='email'>Correo electrónico:</label>              
             <input type='email' id='email' name='email' value={email} onChange={(e) => setEmail(e.target.value)} required/>          
