@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import Link from "next/link"; 
 const Card = () => {
-  return (
+  return (    
     <StyledWrapper>
       <div className="card">
         
@@ -12,8 +12,8 @@ const Card = () => {
             <br />
             No esperes más carga tu CV y ¡Postúlate!</div> 
           <div className="actions">
-            <div>
-              <a href="#" className="download">Bolsa de Empleo</a>
+            <div className='rounded-xl bg-amber-500 text-center'>
+              <Link href="/bolsa">Bolsa de Empleo</Link>
             </div>
             <div>
               <a href="#" className="notnow">Cargar CV</a> 

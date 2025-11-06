@@ -1,12 +1,13 @@
 "use client"
 import React from 'react'
-import Masonry from '@/app/componentes/Masonry';
 import Boton from '@/app/componentes/Boton';
 import Boton2 from '@/app/componentes/boton2'
 import BatciBoton from '@/app/componentes/BatciBoton'
 import { BsBriefcaseFill } from "react-icons/bs";
 import { BsMegaphoneFill } from "react-icons/bs";
-const axios = require('axios');
+import styled from 'styled-components';
+import BotonFormulario from '@/app/componentes/BotonFormulario'
+
 const page = () => {
 
      const items = [
@@ -131,56 +132,38 @@ const page = () => {
     },
     // ... more items
 ];
-    async function getUser() {
-  try {
-    const response = await axios.get('/user?ID=12345');
-    console.log(response);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-    fetch 
   return (
     <>
-
-
-<div className=" bg-black text-white flex justify-center text-center items-center pt-1">
-    <div className="col-span-5">
-        <main className='h-max'>
-            <Masonry
-            items={items}
-            ease="power3.out"
-            duration={0.6}
-            stagger={0.05}
-            animateFrom="bottom"
-            scaleOnHover={true}
-            hoverScale={0.95}
-            blurToFocus={true}
-            colorShiftOnHover={false}
-            />    
-        </main>
+    <div className='w-full bg-gray-900 h-115'>
+        <div className='flex justify-end'>
+          <img src="/cfp655.png" alt="" />
+        </div>
+        <h1 className='text-8xl text-center text-blue-500'>
+          CENTRO DE FORMACION PROFESIONAL Nº665
+        </h1>
+    </div>
+    <br />
+<div className=" text-black bg-white text-center items-center flex justify-center ">
+    <div className="">
     </div>
     <div className="pt-0">
         <h1 className='text-center text-6xl overline'>
             Súmate a nuestra comunidad
-            hgjkjdfljdlifv
-            sdllñfmpdkrmfpmv
         </h1>
         <br />
         <h2 className='text-center text-4xl'>
             Somos una plataforma diseñada para unir empresarios de Esquel y Trevelin con talento calificado, formado en el CFP N° 655. En simples pasos y 100% GRATIS.
         </h2>
         <br />
-         <div className='items-center'>
+         <div className=''>
           <Boton />
           <br />
           <Boton />
     </div>
-    <div className='bg-blue-300 rounded-xl h-60 w-full text- text-center items-center'>
-        <div className='m-6 items-center'>
+    <div className='bg-blue-300 rounded-xl h-60 w-200 text-4xl items-center text-center'>
+        <div className='m-6'>
           <BsBriefcaseFill />
-        <h1 className='text-5xl text-center'>
+        <h1 className='text-5xl'>
           Contratá personal
         </h1>
         <p>
@@ -189,7 +172,7 @@ const page = () => {
         </p>
         </div>
     </div>
-    <div className='bg-blue-300 rounded-xl h-60 w-full text-4xl text-center items-center'>
+    <div className='bg-blue-300 rounded-xl h-60 w-200 text-4xl text-center items-center'>
         <div className='m-6'>
           <BsMegaphoneFill />
         <h1 className='text-5xl'>
@@ -204,8 +187,8 @@ const page = () => {
     <br />
     <BatciBoton />
     <br />
-    <h2 className='text-4xl'>
-      COMO POSTULANTE
+    <h2 className=''>
+      <BotonFormulario />
     </h2>
     <br />
     <div className='flex justify-center'>
@@ -222,3 +205,4 @@ const page = () => {
 }
 
 export default page
+

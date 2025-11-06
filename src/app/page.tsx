@@ -1,12 +1,12 @@
 "use client"
-import Link from "next/link";
 import React from 'react'
-import Masonry from '@/app/componentes/Masonry';
 import Boton from '@/app/componentes/Boton';
 import Boton2 from '@/app/componentes/boton2'
 import BatciBoton from '@/app/componentes/BatciBoton'
 import { BsBriefcaseFill } from "react-icons/bs";
 import { BsMegaphoneFill } from "react-icons/bs";
+import styled from 'styled-components';
+import Formulario from '@/app/componentes/Formulario'
 
 const page = () => {
 
@@ -134,24 +134,19 @@ const page = () => {
 ];
   return (
     <>
-
-<div className="grid grid-cols-5 grid-rows-2 gap-4 text-black bg-white flex justify-center">
-    <div className="col-span-5">
-        <main className='h-max'>
-            <Masonry
-            items={items}
-            ease="power3.out"
-            duration={0.6}
-            stagger={0.05}
-            animateFrom="bottom"
-            scaleOnHover={true}
-            hoverScale={0.95}
-            blurToFocus={true}
-            colorShiftOnHover={false}
-            />    
-        </main>
+    <div className='w-full bg-gray-900 h-115'>
+        <div className='flex justify-end'>
+          <img src="/cfp655.png" alt="" />
+        </div>
+        <h1 className='text-8xl text-center text-blue-500'>
+          CENTRO DE FORMACION PROFESIONAL Nº665
+        </h1>
     </div>
-    <div className="col-span-5 row-start-2 pt-0">
+    <br />
+<div className=" text-black bg-white text-center items-center flex justify-center ">
+    <div className="">
+    </div>
+    <div className="pt-0">
         <h1 className='text-center text-6xl overline'>
             Súmate a nuestra comunidad
         </h1>
@@ -165,7 +160,7 @@ const page = () => {
           <br />
           <Boton />
     </div>
-    <div className='bg-blue-300 rounded-xl h-60 w-200 text-4xl'>
+    <div className='bg-blue-300 rounded-xl h-60 w-200 text-4xl items-center text-center'>
         <div className='m-6'>
           <BsBriefcaseFill />
         <h1 className='text-5xl'>
@@ -177,7 +172,7 @@ const page = () => {
         </p>
         </div>
     </div>
-    <div className='bg-blue-300 rounded-xl h-60 w-200 text-4xl'>
+    <div className='bg-blue-300 rounded-xl h-60 w-200 text-4xl text-center items-center'>
         <div className='m-6'>
           <BsMegaphoneFill />
         <h1 className='text-5xl'>
@@ -195,6 +190,7 @@ const page = () => {
     <h2 className='text-4xl'>
       COMO POSTULANTE
     </h2>
+       <Formulario />
     <br />
     <div className='flex justify-center'>
       <Boton2 />
