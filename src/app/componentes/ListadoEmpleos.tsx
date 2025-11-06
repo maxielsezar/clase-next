@@ -1,11 +1,6 @@
 "use client"
 import Empleos from '@/app/componentes/Empleos'
 
-interface Empleo{
-      puesto:string,
-      localidad: string,
-      publicación: string
-}
 
 export default function ListadoEmpleos(){ 
   const listEmpleos:Empleo[]=[
