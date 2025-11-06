@@ -2,8 +2,10 @@
 import React ,{ useState, useEffect } from 'react'
 import { IoEyeSharp } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa"; 
+import Link from 'next/link';
 import axios from 'axios';
-import './contenido.css'
+import './contenido.css';
+import reset from '../Inicio/reset/page';
 
 const page = () => {
   const [email, setEmail] = useState('');
@@ -15,15 +17,15 @@ const page = () => {
       const axios = require('axios'); 
       async function getUser() {
         try {
-        const response = await axios.get('https://bolsa-de-empleo-cfp.vercel.app/api/applicants');
+        const response = await axios.get('https://bolsa-de-empleo-cfp.vercel.app/api/applicants', 'email');
         console.log(response);
         } catch (error) {
         console.error(error);
   };
       getUser(); }
       }, []); 
-
-
+ 
+   
 
   const handleGoogleSignIn = () => {
     console.log('Iniciando sesión con Google');
@@ -54,8 +56,8 @@ return (
         <button type="submit">Iniciar Sesión</button>
         <button className='google' onClick={handleGoogleSignIn}>Iniciar sesión con Google</button>  
         </form>
-        <div className="olvido"><a href="/reset">¿Olvidaste tu contraseña?</a></div>
-        <p className="texto">¿No tenés cuenta? <a href="/register">Regístrate</a></p>
+        <div className="olvido"><Link href="/Inicio/reset">¿Olvidaste tu contraseña?</Link></div>
+        <p className="texto">¿No tenés cuenta? <Link href="/registro">Regístrate</Link></p>
     </div>  
   </>   
     );     
