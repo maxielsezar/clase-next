@@ -5,12 +5,19 @@
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    text-align: center; 
 }
 
-.logo {
+.logo1 {
     display: block;
     margin: 20px auto;
+}
+
+h1{
+    display: flex;
+    font-size: 24px;
+    font-weight: bold;
+    justify-content: center;
 }
 
 .contenido h2 {
