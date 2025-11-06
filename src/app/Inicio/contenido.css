@@ -1,0 +1,75 @@
+.contenido {
+    width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.logo {
+    display: block;
+    margin: 20px auto;
+}
+
+.contenido h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contenido form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenido label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.contenido .password-label {
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.contenido input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+.contenido button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.contenido .google {
+    background-color: #db4437;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.contenido button:hover {
+    background-color: #3e8e41;
+
+}
+
+.texto a {
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+
+.olvido a{
+    text-decoration: none;
+    color: #007bff;
+    margin-bottom: 30px;
+}

@@ -14,7 +14,9 @@
     "next-auth": "^4.24.11",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "styled-components": "^6.1.19"
+    "styled-components": "^6.1.19",
+    "gsap": "^3.13.0",
+    "motion": "^12.23.24"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -26,5 +28,19 @@
     "eslint-config-next": "15.5.5",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxielsezar/clase-next.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "",
+  "bugs": {
+    "url": "https://github.com/maxielsezar/clase-next/issues"
+  },
+  "homepage": "https://github.com/maxielsezar/clase-next#readme"
 }
