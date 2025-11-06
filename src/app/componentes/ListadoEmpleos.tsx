@@ -1,15 +1,11 @@
+"use client"
 import Empleos from '@/app/componentes/Empleos'
 
-interface Empleo{
-      puesto:string,
-      localidad: string,
-      publicación: string
-}
 
 export default function ListadoEmpleos(){ 
   const listEmpleos:Empleo[]=[
     {
-      puesto:"Anfitrión Turístico ",
+      puesto:"Anfitrión Turístico",
       localidad: "Esquel",
       publicación: "Publicado el 22/10/2025"
       }  ,
@@ -19,9 +15,9 @@ export default function ListadoEmpleos(){
       publicación: "Publicado el 22/10/2025"
     }  ,
   ]
-  
-  const empleosMap= listEmpleos.map ((empleos,i) =>
-    <Empleos key={i} empleo={empleos} />
+  const listaFiltrada =listEmpleos.filter((item)=>item.puesto)
+  const empleosMap= listaFiltrada.map ((empleos,i) =>
+    <Empleos key={i} puesto={empleos.puesto}  localidad={empleos.localidad} publicación={empleos.publicación} />
   )
     
 

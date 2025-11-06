@@ -1,46 +1,42 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import axios from "axios";
+import React from "react";
+
+const baseURL = "https://bolsa-de-empleo-cfp.vercel.app/api/users";
+
 
 export default function RegistroEmpresario() {
   const [form, setForm] = useState({
-    nombre: "",
+    name: "",
+    lastName:"",
     email: "",
-    telefono: "",
-    empresa: "",
-    rubro: "",
-    cuit: "",
-    razonSocial: "",
-    iva: "",
-    direccion: "",
-    localidad: "",
-    provincia: "",
-    codigoPostal: "",
-    password: "",
-    confirmar: "",
-    aceptar: false,
+    tel: "",
+    password:"",
   });
+  function createPost() {
+    axios.post(baseURL, form)
+  }
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setForm({ ...form, [name]: type === "checkbox" ? checked : value });
   };
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (form.password !== form.confirmar) {
       alert("Las contraseñas no coinciden");
       return;
     }
-
     if (!form.aceptar) {
       alert("Debes aceptar los términos y condiciones");
       return;
     }
 
-    console.log("Datos de registro:", form);
-    // Acá podés agregar tu lógica de registro (Firebase o API)
+   createPost()
   };
 
   return (
@@ -73,7 +69,7 @@ className="center"
         onSubmit={handleSubmit}
         className="bg-white shadow-xl rounded-2xl p-8 w-full max-w-2xl"
       >
-        <h1 className="text-2xl font-semibold mb-6 text-center text-gray-800">
+        <h1 className="text-2xl font-semibold mb-6 text-center text-blue-900">
           Crear cuenta de empresario
         </h1>
 
@@ -84,13 +80,24 @@ className="center"
         <div className="grid md:grid-cols-2 gap-4 mb-6 text-black">
           <input
             type="text"
-            name="nombre"
-            placeholder="Nombre completo"
-            value={form.nombre}
+            name="name"
+            placeholder="Nombre"
+            value={form.name}
             onChange={handleChange}
             required
             className="border p-2 rounded-lg w-full"
           />
+          <input
+            type="text"
+            name="lastName"
+            placeholder="Apellido"
+            value={form.lastName}
+            onChange={handleChange}
+            required
+            className="border p-2 rounded-lg w-full"
+          />
+
+
           <input
             type="email"
             name="email"
@@ -102,9 +109,9 @@ className="center"
           />
           <input
             type="tel"
-            name="telefono"
+            name="tel"
             placeholder="Teléfono"
-            value={form.telefono}
+            value={form.tel}
             onChange={handleChange}
             className="border p-2 rounded-lg w-full"
           />
@@ -159,81 +166,6 @@ className="center"
           </select>
         </div>
 
-    
-        <h2 className="text-lg font-semibold text-gray-700 mb-2">
-          Datos de facturación
-        </h2>
-        <div className="grid md:grid-cols-2 gap-4 mb-6 text-black">
-          <input
-            type="text"
-            name="cuit"
-            placeholder="CUIT / DNI"
-            value={form.cuit}
-            onChange={handleChange}
-            required
-            className="border p-2 rounded-lg w-full"
-          />
-
-          <input
-            type="text"
-            name="razonSocial"
-            placeholder="Razón social"
-            value={form.razonSocial}
-            onChange={handleChange}
-            className="border p-2 rounded-lg w-full"
-          />
-
-          <select
-            name="iva"
-            value={form.iva}
-            onChange={handleChange}
-            required
-            className="border p-2 rounded-lg w-full text-gray-700"
-          >
-            <option value="">Condición frente al IVA</option>
-            <option value="Responsable Inscripto">Responsable Inscripto</option>
-            <option value="Monotributista">Monotributista</option>
-            <option value="Exento">Exento</option>
-            <option value="Consumidor Final">Consumidor Final</option>
-          </select>
-
-          <input
-            type="text"
-            name="direccion"
-            placeholder="Dirección comercial"
-            value={form.direccion}
-            onChange={handleChange}
-            required
-            className="border p-2 rounded-lg w-full"
-          />
-
-          <input
-            type="text"
-            name="localidad"
-            placeholder="Localidad"
-            value={form.localidad}
-            onChange={handleChange}
-            className="border p-2 rounded-lg w-full"
-          />
-
-          <input
-            type="text"
-            name="provincia"
-            placeholder="Provincia"
-            value={form.provincia}
-            onChange={handleChange}
-            className="border p-2 rounded-lg w-full"
-          />
-
-          <input
-            type="text"
-            name="codigoPostal"
-            placeholder="Código postal"
-            value={form.codigoPostal}
-            onChange={handleChange}
-            className="border p-2 rounded-lg w-full"
-          />
-        </div>
 
         {/* ACEPTACIÓN */}
         <label className="flex items-center text-sm mb-6">
