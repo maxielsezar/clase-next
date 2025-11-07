@@ -2,12 +2,11 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import Form from '@/app/componentes/Styled-components';
 
 
 
 const page = () => {
-
-
 
 
   return (
@@ -17,10 +16,11 @@ const page = () => {
 
 
 
-<div className='pt-10 bg-neutral-500'>
-    <div className='ml-5 h-30 bg-center m-5 bg-no-repeat bg-[url(https://cfp655esquel.edu.ar/cfp655/wp-content/uploads/2016/04/CFP-N%C2%BA-655-Blanco.png)]'></div>
-    <p className='ml-50 mt-20 text-4xl text-white'><b>TE AYUDAMOS A FORJARTE PARA EL TRABAJO EN EL :</b></p>
-</div>
+
+<div className='ml-110 mt-20'><Form /></div>
+
+
+
 
 </>
       
