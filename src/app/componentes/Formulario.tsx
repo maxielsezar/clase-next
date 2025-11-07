@@ -1,20 +1,52 @@
 "use client"
-import React from 'react';
 import styled from 'styled-components';
+import React, { useState } from "react";
+import axios from "axios";
 
 const Form = () => {
+  const [formData, setFormData] = useState({ title: "", description: "", name: "", type:"", location: "", company: "" });
+  const [response, setResponse] = useState(null);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("https://bolsa-de-empleo-cfp.vercel.app/api/jobs", formData);
+      setResponse(res.data);
+    } catch (error) {
+      console.error("Error al realizar la solicitud POST:", error);
+    }
+  };
   return (
 
     <StyledWrapper>
       <div className="form-box">
-        <form className="form">
-          <span className="title">Cursos Del CFP N°655</span>
-          <span className="subtitle">Registrate acá</span>
+        <form onSubmit={handleSubmit}>
+          
+        <div className='w-15 h-15 flex justify-end'>
+            <img src="/cfp655.png" alt="" />
+        </div>
+          <span className="title flex justify-center">Cursos Del CFP N°655</span>
+          <br />
+          <span className="subtitle flex justify-center">Registrate acá</span>
           <div className="form-container">
+            <input
+            title="text"
+            
+            name="title"
+    
+            value={formData.title}
+            onChange={handleChange}
+          />
             <input type="text" className="input" placeholder="Nombre" />
             <input type="text" className="input" placeholder="Curso" />
             <input type="text" className="input" placeholder="Horario" />
             <input type="textArea" className="input" placeholder="Descripcion" />
+          
             <input type="text" className="input" placeholder="Ubicacion" />
           </div>
           <button>Subir</button>
@@ -26,10 +58,13 @@ const Form = () => {
     
   );
 }
+//
+
 
 const StyledWrapper = styled.div`
   .form-box {
-    max-width: 700px;
+    max-width: 800px;
+    max-height: 1000px;
     background: #f1f7fe;
     overflow: hidden;
     border-radius: 16px;
@@ -48,6 +83,7 @@ const StyledWrapper = styled.div`
   /*Form text*/
   .title {
     font-weight: bold;
+    font-height: bold;
     font-size: 1.6rem;
   }
 
@@ -96,7 +132,7 @@ const StyledWrapper = styled.div`
 
   /*Button*/
   .form button {
-    background-color: #0066ff;
+    background-color: #0939939;
     color: #fff;
     border: 0;
     border-radius: 24px;
