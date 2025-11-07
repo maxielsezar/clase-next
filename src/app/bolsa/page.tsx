@@ -13,7 +13,7 @@ interface Trabajo{
 
 
 const empleos:Trabajo[] = [
-  { puesto: "Maestro panadero", lugar: "Panadero – ESQUEL", fecha: "Publicado 17/08/2025" },
+  { puesto: "Maestro panadero", lugar: "Panadero  ESQUEL", fecha: "Publicado 17/08/2025" },
   { puesto: "Electricista montador", lugar: "Electricista - TREVELIN", fecha: "Publicado 10/08/2025" },
   { puesto: "Gasista", lugar: "Gasista- ESQUEL", fecha: "Publicado 09/08/2025" },
   { puesto: "Encargado de mantenimiento de edificio", lugar: "Mantenimiento de edificio - ESQUEL", fecha: "Publicado 09/08/2025" },
