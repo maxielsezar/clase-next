@@ -1,13 +1,32 @@
 'use client'
-import React ,{ useState } from 'react'
+import React ,{ useState, useEffect } from 'react'
 import { IoEyeSharp } from "react-icons/io5";
-import { FaEyeSlash } from "react-icons/fa";
-
-import './contenido.css'
+import { FaEyeSlash } from "react-icons/fa"; 
+import Link from 'next/link';
+import axios from 'axios';
+import './contenido.css';
+import reset from '../Inicio/reset/page';
 
 const page = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState(''); 
+  
+      const [data,setData]= useState('')
+  
+      useEffect(() => {
+      const axios = require('axios'); 
+      async function getUser() {
+        try {
+        const response = await axios.get('https://bolsa-de-empleo-cfp.vercel.app/api/applicants', 'email');
+        console.log(response);
+        } catch (error) {
+        console.error(error);
+  };
+      getUser(); }
+      }, []); 
+ 
+   
+
   const handleGoogleSignIn = () => {
     console.log('Iniciando sesión con Google');
   }
@@ -18,8 +37,9 @@ const page = () => {
 
 return ( 
   <>
-    <div className='titulo'>
-      <img className='logo' src="https://cfp655esquel.edu.ar/cfp655/wp-content/uploads/2016/04/CFP-N%C2%BA-655-Blanco.png" />
+    <div>
+      <img className='logo1' src="/CFP-Nº-655-Blanco.png" />
+      <h1>CENTRO DE FORMACIÓN Nº655</h1>
     </div>
     <div className='contenido'>
       <h2>Iniciar Sesión</h2>
@@ -36,8 +56,8 @@ return (
         <button type="submit">Iniciar Sesión</button>
         <button className='google' onClick={handleGoogleSignIn}>Iniciar sesión con Google</button>  
         </form>
-        <div className="olvido"><a href="/reset">¿Olvidaste tu contraseña?</a></div>
-        <p className="texto">¿No tenés cuenta? <a href="/register">Regístrate</a></p>
+        <div className="olvido"><Link href="/Inicio/reset">¿Olvidaste tu contraseña?</Link></div>
+        <p className="texto">¿No tenés cuenta? <Link href="/registro">Regístrate</Link></p>
     </div>  
   </>   
     );     

@@ -1,7 +1,35 @@
+import Image from "next/image";
+
 export default function TerminosPage() {
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-6 flex justify-center">
       <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-3xl">
+
+<div className="absolute top-40 left-10 ">
+
+<Image
+src="/logo.jpg"
+width={200}
+height={110}
+alt="logo"
+className="center"
+/>
+</div>
+
+<div className="absolute top-40 right-10 ">
+
+<Image
+src="/logo.jpg"
+width={200}
+height={110}
+alt="logo"
+className="center"
+/>
+</div>
+
+
+
+
         <h1 className="text-2xl font-semibold mb-6 text-center text-gray-800">
           Términos y Condiciones
         </h1>
