@@ -1,0 +1,11 @@
+import { data } from "motion/react-client";
+
+const usuarioSchema = new mongoose.Schema({
+  name: String,
+  apellido: String,
+  fecha de nacimiento: Date,
+  email: String,
+  genero: String,
+
+});
+export default mongoose.model('Usuario', usuarioSchema)
