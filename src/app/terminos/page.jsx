@@ -2,13 +2,13 @@ import Image from "next/image";
 
 export default function TerminosPage() {
   return (
-    <div className="min-h-screen bg-gray-50 py-10 px-6 flex justify-center">
-      <div className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-3xl">
+    <div className="min-h-screen py-10 px-6 flex justify-center">
+      <div className=" shadow-lg rounded-2xl p-8 w-full max-w-3xl">
 
 <div className="absolute top-40 left-10 ">
 
 <Image
-src="/logo.jpg"
+src="/logo2.png"
 width={200}
 height={110}
 alt="logo"
@@ -19,7 +19,7 @@ className="center"
 <div className="absolute top-40 right-10 ">
 
 <Image
-src="/logo.jpg"
+src="/logo2.png"
 width={200}
 height={110}
 alt="logo"
@@ -30,11 +30,11 @@ className="center"
 
 
 
-        <h1 className="text-2xl font-semibold mb-6 text-center text-gray-800">
+        <h1 className="text-2xl font-semibold mb-6 text-center text-red-700">
           Términos y Condiciones
         </h1>
 
-        <div className="space-y-6 text-gray-700 text-sm leading-relaxed text-center">
+        <div className="space-y-6 text-sm leading-relaxed text-center">
           <p>
             <strong>1. Aceptación de los Términos:</strong> Al registrarse en nuestra
             plataforma, el usuario acepta cumplir con las normas de uso y
@@ -73,7 +73,7 @@ className="center"
 
         <div className="mt-8 text-center">
           <a
-            href="/registro"
+            href="/Registro/Usuarios"
             className="text-yellow-600 hover:underline font-medium"
           >
             ← Volver al registro
