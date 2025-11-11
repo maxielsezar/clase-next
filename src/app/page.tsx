@@ -1,11 +1,28 @@
 import Link from "next/link";
+<<<<<<< HEAD
+=======
+import { useState, useEffect } from "react";
+
+//https://bolsa-de-empleo-cfp.vercel.app/api/jobs
+//https://bolsa-de-empleo-cfp.vercel.app/api/companies
+//https://bolsa-de-empleo-cfp.vercel.app/api/applicants
+>>>>>>> a945aefbd53ddc5191f0bf5c2aa0463c545de288
 
 //https://github.com/santiskrr/portfolio/blob/main/app/components/LinkPreview.tsx
 export default function Home() {
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> a945aefbd53ddc5191f0bf5c2aa0463c545de288
   return (
     <div className="flex justify-between">
    
+<<<<<<< HEAD
     <Link href="/tami">ir a ver a tami</Link>
+=======
+    <Link href="/gabi">Ir a ver gabi</Link>
+>>>>>>> a945aefbd53ddc5191f0bf5c2aa0463c545de288
    </div>
   );
 =======
