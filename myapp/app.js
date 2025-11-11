@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+const mongoose = require('mongoose');
+>>>>>>> 0a57b9782e0db1d8478d2d927267820517e6444e
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -6,6 +10,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+<<<<<<< HEAD
 var jobsRouter = require('./routes/jobs');
 
 var app = express();
@@ -25,6 +30,23 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.static('public'))
+=======
+var jobsRouter = require('./routes/jobs')
+
+var app = express();
+
+main().catch(err => console.log(err));
+
+async function main() {
+  await mongoose.connect('mongodb+srv://gabrielarganaraz16_db_user:blHpzJFl5yemLFwS@cluster0.prugzym.mongodb.net/?appName=Cluster0');
+ }
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+app.use(express.static('public'))
+
+app.use(logger('dev'));
+>>>>>>> 0a57b9782e0db1d8478d2d927267820517e6444e
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -39,7 +61,10 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0a57b9782e0db1d8478d2d927267820517e6444e
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
