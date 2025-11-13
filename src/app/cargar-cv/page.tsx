@@ -1,36 +1,37 @@
 "use client";
 import { useState } from "react";
+import Experiencia from "../models/experiencia";
+import Estudios from "../models/estudios";
+
 
 export default function CargarCV() {
-  const [formDataExp, setFormDataExp] = useState(
-    {
-      id:"",
-      titulo: "",
-      descripcion: "",
-      lugar: "",
-      fechaInicio: "",
-      fechaFin: "",
-    })
+  const [ListaExperiencia, setListaExperiencia] = useState<Experiencia[]>([])
   
-
-  const [formDataEst, setFormDataEst] = useState({
-    nuevoEstudio: {
-      id:"",
-      nombre: "",
-      instituto: "",
-      lugar: "",
-      fechaInicio: "",
-      fechaFin: "",
-    },
-  });
-
-
+  const [ListaEstudios, setListaEstudios] = useState<Estudios[]>([])
   
+  const [formExperiencia,setFormExperiencia] = useState<Experiencia>({
+    id:"",
+    titulo:"",
+    descripcion:"",
+    lugar: "",
+    fechaInicio: "",
+    fechaFin:""
+  })
+  
+  const [formEstudio,setFormEstudio] = useState<Estudios>({
+        id:"",
+        nombre: "",
+        instituto: "",
+        lugar: "",
+        fechaInicio: "",
+        fechaFin: ""
+})
+
 
   const [preview, setPreview] = useState(null);
 
   // Manejo de cambio general
-  const handleChange = (e) => {
+  const handleChange = (e:Event) => {
     const { name, value, files } = e.target;
     if (name === "foto" && files?.[0]) {
       const file = files[0];
@@ -47,69 +48,58 @@ export default function CargarCV() {
   // EXPERIENCIAS
   const handleExperienciaChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      nuevaExperiencia: { ...formDataExp.nuevaExperiencia, [name]: value },
-    });
+     setFormExperiencia(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
   };
 
   const agregarExperiencia = () => {
-    const { titulo, descripcion, lugar, fechaInicio, fechaFin } =
-      formDataExp.nuevaExperiencia;
-    if (titulo && descripcion && lugar && fechaInicio && fechaFin) {
-      setFormData({
-        ...formData,
-        experiencias: [...formDataExp.experiencias, formDataExp.nuevaExperiencia],
-        nuevaExperiencia: {
-          titulo: "",
-          descripcion: "",
-          lugar: "",
-          fechaInicio: "",
-          fechaFin: "",
-        },
-      });
+    if (formExperiencia.titulo && formExperiencia.descripcion && formExperiencia.lugar) {
+      setListaExperiencia(
+        [...ListaExperiencia,formExperiencia]
+      );
     } else {
       alert("Completá todos los campos de la experiencia antes de agregarla.");
     }
   };
 
-  const eliminarExperiencia = (index) => {
-    const nuevas = [...formDataExp.experiencias];
-    nuevas.splice(index, 1);
-    setFormData({ ...formDataExp, experiencias: nuevas });
+
+  const eliminarExperiencia = (indiceAEliminar:number) => {
+      const listaActualizada = [
+      ...ListaExperiencia.slice(0, indiceAEliminar),
+      ...ListaExperiencia.slice(indiceAEliminar + 1)
+    ];
+    setListaExperiencia( listaActualizada );
   };
 
   // ESTUDIOS
   const handleEstudioChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      nuevoEstudio: { ...formData.nuevoEstudio, [name]: value },
-    });
-  };
+        setFormEstudio(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  }
 
   const agregarEstudio = () => {
-    const { nombre, instituto } = formData.nuevoEstudio;
+    const { nombre, instituto } = formEstudio;
     if (nombre && instituto) {
-      setFormData({
-        ...formData,
-        estudios: [...formData.estudios, formData.nuevoEstudio],
-        nuevoEstudio: { nombre: "", instituto: "" },
-      });
+      setListaEstudios(
+        [...ListaEstudios,formEstudio]
+      );
     } else {
       alert("Completá ambos campos del estudio antes de agregarlo.");
     }
   };
 
-  const eliminarEstudio = (index) => {
-    const nuevas = [...formData.estudios];
-    nuevas.splice(index, 1);
-    setFormData({ ...formData, estudios: nuevas });
+  const eliminarEstudio = (index:number) => {
+    ListaEstudios.splice(index, 1)
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Datos del formulario:", formData);
+    console.log("Datos del formulario:", formEstudio);
     alert("Tu CV fue enviado correctamente ✅");
   };
 
@@ -158,7 +148,7 @@ export default function CargarCV() {
             <input
               type="text"
               name="titulo"
-              value={formDataExp.nuevaExperiencia.titulo}
+              value={formExperiencia.titulo}
               onChange={handleExperienciaChange}
               placeholder="Título del puesto (ej: Vendedor)"
               className="w-full border rounded-lg px-3 py-2"
@@ -166,18 +156,18 @@ export default function CargarCV() {
             <input
               type="text"
               name="lugar"
-              value={formDataExp.nuevaExperiencia.lugar}
+              value={formExperiencia.lugar}
               onChange={handleExperienciaChange}
               placeholder="Lugar o empresa"
               className="w-full border rounded-lg px-3 py-2"
             />
             <textarea
               name="descripcion"
-              value={formDataExp.nuevaExperiencia.descripcion}
+              value={formExperiencia.descripcion}
               onChange={handleExperienciaChange}
               placeholder="Descripción de tareas"
               className="w-full border rounded-lg px-3 py-2"
-              rows="2"
+             
             />
 
 
@@ -187,7 +177,7 @@ export default function CargarCV() {
     <input
       type="date"
       name="fechaInicio"
-      value={formDataExp.nuevaExperiencia.fechaInicio}
+      value={formExperiencia.fechaInicio}
       onChange={handleExperienciaChange}
       className="border rounded-lg px-3 py-2"
     />
@@ -197,7 +187,7 @@ export default function CargarCV() {
     <input
       type="date"
       name="fechaFin"
-      value={formDataExp.nuevaExperiencia.fechaFin}
+      value={formExperiencia.fechaFin}
       onChange={handleExperienciaChange}
       className="border rounded-lg px-3 py-2"
     />
@@ -219,7 +209,8 @@ export default function CargarCV() {
 
           {/* Lista de experiencias */}
           <ul className="mt-4 space-y-3">
-            {formDataExp.experiencias.map((exp, index) => (
+            {
+            ListaExperiencia.map((exp, index) => (
               <li
                 key={index}
                 className="border rounded-lg p-3 bg-gray-50 flex justify-between items-start"
@@ -255,7 +246,7 @@ export default function CargarCV() {
             <input
               type="text"
               name="nombre"
-              value={formData.nuevoEstudio.nombre}
+              value={formEstudio.nombre}
               onChange={handleEstudioChange}
               placeholder="Nombre del estudio (ej: Lic. en Administración)"
               className="w-full border rounded-lg px-3 py-2"
@@ -263,7 +254,7 @@ export default function CargarCV() {
             <input
               type="text"
               name="instituto"
-              value={formData.nuevoEstudio.instituto}
+              value={formEstudio.instituto}
               onChange={handleEstudioChange}
               placeholder="Instituto o universidad"
               className="w-full border rounded-lg px-3 py-2"
@@ -279,7 +270,7 @@ export default function CargarCV() {
 
           {/* Lista de estudios */}
           <ul className="mt-4 space-y-3">
-            {formData.estudios.map((est, index) => (
+            {ListaEstudios.map((est, index) => (
               <li
                 key={index}
                 className="border rounded-lg p-3 bg-gray-50 flex justify-between items-start"
