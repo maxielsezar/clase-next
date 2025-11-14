@@ -9,8 +9,15 @@ import Empleo from '../models/jobs'
 
 
 const page = () => {
-  const [filtro,setFiltro]=useState('')
+
   const [data,setData]=useState<Empleo[]>([])
+  const [selectedValue, setSelectedValue] = useState('');
+const itemsUnicosPorTitulo = data.filter((item, index, self) =>
+   index === self.findIndex((obj) => obj.title === item.title)
+);
+
+console.log(itemsUnicosPorTitulo);
+
 
   useEffect(() => {
     axios.get('https://bolsa-de-empleo-cfp.vercel.app/api/jobs').then((response) => {
@@ -18,22 +25,34 @@ const page = () => {
     });
   }, []);
 
+ const filteredData = data.filter(item =>
+    item.title.toLowerCase().includes(selectedValue.toLowerCase())
+  );
+  
   if (!data) return null;
-//mongodb+srv://naticayul_db_user:GqHsLJpHq6fa6Btl@cluster0.lnaccnw.mongodb.net/?appName=Cluster0
   return (
     <div>
       <Header/>
       <p className="text-black text-5xl text-center mt-10 mb-20"> Bolsa de empleo </p>
-      <Main />
-      {data.map((item, i)=>{
+      <form className="flex text-black justify-center" action="#">
+          <label form="lang">Filtrar por puesto </label>
+          <select value={selectedValue} onChange={(e) => setSelectedValue(e.target.value)}>
+          {data.map((item, index) => (
+                  <option value={item.title} key={index}>
+                    {item.title}
+                  </option>
+                ))}
+          </select>
+        </form>
+      {filteredData.map((item, i)=>{
 
           var date = new Date(item.createdAt);
           return (
           <div key={i} className="text-black mt-10 w-2/3 ">
                     <h1> {item.title} </h1>
                     <h1> {item.location} </h1>
-                    <h1> publicado el dia: {date.toLocaleDateString()} </h1>
-            </div>
+                    <h1> Publicado el dia: {date.toLocaleDateString()} </h1>
+          </div>
           )
        })}
       

@@ -12,7 +12,6 @@ export default function Header() {
         <Radio2/>
         <ButtonSesion/>
       </div>
-      <p> Bolsa de Trabajo </p>
     </>
   );
 }
