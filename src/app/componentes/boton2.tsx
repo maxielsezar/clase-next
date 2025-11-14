@@ -15,8 +15,8 @@ const Card = () => {
             <div className='rounded-xl bg-amber-500 text-center'>
               <Link href="/bolsa">Bolsa de Empleo</Link>
             </div>
-            <div>
-              <a href="#" className="notnow">Cargar CV</a> 
+            <div className='rounded-xl bg-amber-500 text-center'>
+              <Link href="/Curriculum">Cargar CV</Link>
             </div>
           </div>    
         </div>

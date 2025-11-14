@@ -1,14 +1,3 @@
-import Link from "next/link";
-
-//https://github.com/santiskrr/portfolio/blob/main/app/components/LinkPreview.tsx
-export default function Home() {
-  return (
-    <div className="flex justify-between">
-   
-    <Link href="/tami">ir a ver a tami</Link>
-   </div>
-  );
-=======
 "use client"
 import React from 'react'
 import Boton from '@/app/componentes/Boton';
@@ -214,7 +203,7 @@ const page = () => {
 </>
 
   )
->>>>>>> feat/presentacion
+
 }
 
 export default page
