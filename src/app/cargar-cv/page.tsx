@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Experiencia from "../models/experiencia";
 import Estudios from "../models/estudios";
+import Image from "next/image";
 
 
 export default function CargarCV() {
@@ -28,41 +29,54 @@ export default function CargarCV() {
 })
 
 
-  const [preview, setPreview] = useState(null);
+  const [preview, setPreview] = useState<string>("");
 
   // Manejo de cambio general
   const handleChange = (e:Event) => {
-    const { name, value, files } = e.target;
-    if (name === "foto" && files?.[0]) {
+    const {files} = e.target;
+    if (files?.[0]) {
       const file = files[0];
-      setFormData({ ...formData, foto: file });
       setPreview(URL.createObjectURL(file));
-    } else {
-      setFormData({
-        ...formData,
-        [name]: files ? files[0] : value,
-      });
-    }
+    } 
   };
 
   // EXPERIENCIAS
   const handleExperienciaChange = (e) => {
-    const { name, value } = e.target;
-     setFormExperiencia(prevState => ({
+  const { name, value } = e.target;
+  setFormExperiencia(prevState => ({
       ...prevState,
       [name]: value
     }));
   };
 
   const agregarExperiencia = () => {
+const inicio=new Date(formExperiencia.fechaInicio);
+const fin=new Date(formExperiencia.fechaFin);
+
+if(isNaN(inicio.getTime())){
+  alert("Las fechas no son validas");
+  return;
+}
+
+if(fin<inicio){
+
+alert("La fecha de salida no puede ser anterior a la fecha de inicio");
+return;
+
+}
+
     if (formExperiencia.titulo && formExperiencia.descripcion && formExperiencia.lugar) {
+      if(!formExperiencia.fechaFin){formExperiencia.fechaFin="continua"}
       setListaExperiencia(
         [...ListaExperiencia,formExperiencia]
-      );
-    } else {
+      );}
+
+   else{
       alert("Completá todos los campos de la experiencia antes de agregarla.");
     }
-  };
+    };
+
+
 
 
   const eliminarExperiencia = (indiceAEliminar:number) => {
@@ -88,14 +102,22 @@ export default function CargarCV() {
       setListaEstudios(
         [...ListaEstudios,formEstudio]
       );
-    } else {
+    } 
+    else {
       alert("Completá ambos campos del estudio antes de agregarlo.");
     }
   };
 
-  const eliminarEstudio = (index:number) => {
-    ListaEstudios.splice(index, 1)
+  const eliminarEstudio = (indiceAEliminar:number) => {
+
+  const listaActualizada = [
+
+  ...ListaEstudios.slice(0,indiceAEliminar),
+  ...ListaEstudios.slice(indiceAEliminar + 1)
+  ];
+  setListaEstudios(listaActualizada);
   };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -107,15 +129,15 @@ export default function CargarCV() {
     <div className="flex justify-center items-center min-h-screen bg-gray-100 p-6">
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-2xl space-y-6"
+        className="bg-gray-100 p-8 rounded-2xl shadow-lg w-full max-w-2xl space-y-6"
       >
-        <h1 className="text-2xl font-bold text-center text-gray-800">
+        <h1 className="text-2xl font-bold text-center text-blue-700">
           Cargar Curriculum Vitae
         </h1>
 
         {/* FOTO DE PERFIL */}
         <div className="flex flex-col items-center">
-          <label className="block text-gray-700 font-medium mb-2">
+          <label className="block text-black font-medium mb-2">
             Foto de perfil
           </label>
           {preview ? (
@@ -171,30 +193,44 @@ export default function CargarCV() {
             />
 
 
+<div className="absolute top-10 left-17">
+
+<Image
+src="/logo2.png"
+width={230}
+height={130}
+alt="logo"
+className="center"
+/>
+</div>
+
+
+
 <div className="flex gap-4">
   <div className="flex flex-col flex-1">
-    <label className="text-gray-700 text-sm mb-1">Fecha de inicio</label>
+    <label className="text-black text-sm mb-1">Fecha de inicio</label>
     <input
       type="date"
       name="fechaInicio"
       value={formExperiencia.fechaInicio}
       onChange={handleExperienciaChange}
+      max={new Date().toISOString().split("T")[0]}
       className="border rounded-lg px-3 py-2"
     />
   </div>
   <div className="flex flex-col flex-1">
-    <label className="text-gray-700 text-sm mb-1">Fecha de salida</label>
+    <label className="text-black text-sm mb-1">Fecha de salida</label>
     <input
       type="date"
       name="fechaFin"
       value={formExperiencia.fechaFin}
       onChange={handleExperienciaChange}
+      max={new Date().toISOString().split("T")[0]}
       className="border rounded-lg px-3 py-2"
     />
   </div>
 </div>
     
-
 
 
 
