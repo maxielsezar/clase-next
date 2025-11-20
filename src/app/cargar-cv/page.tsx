@@ -63,7 +63,8 @@ const MiComponente = () => {
 
   // EXPERIENCIAS
   const handleExperienciaChange = (e:React.MouseEvent<HTMLButtonElement>) => {
-  const { name, value } = e.target;
+  const target=e.target as HTMLButtonElement;
+  const { name, value } = target;
   setFormExperiencia(prevState => ({
       ...prevState,
       [name]: value
@@ -110,7 +111,8 @@ return;
 
   // ESTUDIOS
   const handleEstudioChange = (e:React.MouseEvent<HTMLButtonElement>) => {
-    const { name, value } = e.target;
+  const target=e.target as HTMLButtonElement;
+  const { name, value } = target;
         setFormEstudio(prevState => ({
       ...prevState,
       [name]: value
