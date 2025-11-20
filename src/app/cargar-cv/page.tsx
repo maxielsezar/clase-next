@@ -62,7 +62,7 @@ const MiComponente = () => {
 };
 
   // EXPERIENCIAS
-  const handleExperienciaChange = (e:React.MouseEvent<HTMLButtonElement) => {
+  const handleExperienciaChange = (e:React.MouseEvent<HTMLButtonElement>) => {
   const { name, value } = e.target;
   setFormExperiencia(prevState => ({
       ...prevState,
@@ -109,7 +109,7 @@ return;
   };
 
   // ESTUDIOS
-  const handleEstudioChange = (e:React.MouseEvent<HTMLButtonElement) => {
+  const handleEstudioChange = (e:React.MouseEvent<HTMLButtonElement>) => {
     const { name, value } = e.target;
         setFormEstudio(prevState => ({
       ...prevState,
@@ -140,7 +140,7 @@ return;
   };
 
 
-  const handleSubmit = (e:React.MouseEvent<HTMLButtonElement) => {
+  const handleSubmit = (e:React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     console.log("Datos del formulario:", formEstudio);
     alert("Tu CV fue enviado correctamente ✅");
