@@ -1,41 +1,17 @@
-import React from 'react'
-import Link from 'next/link'
+import Image from "next/image";
+import Radio from '@/app/componentes/Radio'
+import Radio2 from '@/app/componentes/Radio2'
+import ButtonSesion from '@/app/componentes/ButtonSesion'
 
-const Nav = () => {
-    const lista = [
-        {
-            link:"/",
-            texto:"ir a inicio"
-        },
-        {
-            link:"/contacto",
-            texto:"ir a contacto"
-        },
-        {
-            link:"/direccion/edificio",
-            texto:"ir a edificio"
-        },
-           {
-            link:"/direccion",
-            texto:"ir a direccion"
-        },
-           {
-            link:"/recursos",
-            texto:"ir a recursos"
-        },
-    ]
-
+export default function Nav() {
   return (
-    <nav>
-        {lista.map((item,index)=>
-        <Link key={index} 
-        className="p-1 ml-5 mt-3 rounded-3xl bg-green-600" 
-        href={item.link}>
-        {item.texto}
-        </Link>)}
+    <nav className="mt-3">
+      <div className="flex justify-evenly mt-3 h-7">
+  
+        <Radio/>
+        <Radio2/>
+        <ButtonSesion/>
+      </div>
     </nav>
-  )
+  );
 }
-
-
-export default Nav

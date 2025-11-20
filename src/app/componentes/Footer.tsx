@@ -16,9 +16,7 @@ export default function Footer() {
           <a href="/privacidad" className="hover:text-white transition-colors">
             Privacidad
           </a>
-          <a href="/contacto" className="hover:text-white transition-colors">
-            Contactanos
-          </a>
+
         </div>
 
         {/* Copyright */}
