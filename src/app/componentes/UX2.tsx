@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react'
 import Empleo from '../models/jobs'
 
 
-
 const UX2 = () => {
 
 const [filtro,setFiltro]=useState('')
@@ -22,7 +21,7 @@ if (!data) return null;
 return (
     <div>
 
- {data.map((item, i)=>{
+{data.map((item, i)=>{
 
         const date = new Date(item.createdAt);
         return (
@@ -36,7 +35,7 @@ return (
 
 
     </div>
-  )
+)
 }
 
 export default UX2
