@@ -5,7 +5,7 @@ import Estudios from "../models/estudios";
 import Image from "next/image";
 import { Poppins } from "next/font/google";
 import Upload from "../componentes/Upload";
-
+import React ,{ ChangeEvent } from 'react';
 
 export default function CargarCV() {
   const [ListaExperiencia, setListaExperiencia] = useState<Experiencia[]>([])
@@ -34,13 +34,32 @@ export default function CargarCV() {
   const [preview, setPreview] = useState<string>("");
 
   // Manejo de cambio general
-  const handleChange = (e:Event) => {
-    const {files} = e.target;
+
+
+// ... (otros imports y estado)
+
+const MiComponente = () => {
+  const [preview, setPreview] = useState<string | null>(null);
+
+  // Usa ChangeEvent<HTMLInputElement>
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    
+    // e.target ya es reconocido como un HTMLInputElement, por lo que 'files' existe.
+    const { files } = e.target; 
+
     if (files?.[0]) {
       const file = files[0];
       setPreview(URL.createObjectURL(file));
     } 
   };
+  
+  return (
+    <div>
+      <input type="file" onChange={handleChange} />
+      {preview && <img src={preview} alt="Preview" />}
+    </div>
+  );
+};
 
   // EXPERIENCIAS
   const handleExperienciaChange = (e) => {
