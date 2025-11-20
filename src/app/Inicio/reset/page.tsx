@@ -1,7 +1,6 @@
 "use client";
 import React from 'react'
 import { useState } from 'react';
-import UX3 from '@/app/componentes/UX3';
 
 const page = () => {
 
