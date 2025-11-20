@@ -1,8 +1,9 @@
 "use client"
 import React from 'react'
+import Image from 'next/image'
 import Boton from '@/app/componentes/Boton';
-import Boton2 from '@/app/componentes/boton2'
 import BatciBoton from '@/app/componentes/BatciBoton'
+import CvBoron from '@/app/componentes/CvBoron' 
 import { BsBriefcaseFill } from "react-icons/bs";
 import { BsMegaphoneFill } from "react-icons/bs";
 import styled from 'styled-components';
@@ -135,8 +136,9 @@ const page = () => {
   return (
     <>
     <div className='w-full bg-gray-900 h-115'>
-        <div className='flex justify-end'>
-          <img src="/CFP-N°-655-Blanco.png" alt="" />
+          <div className='flex justify-end'>
+           <Image src="/CFP-Nº-655-Blanco.png" alt="" height={70} width={70} />
+                
         </div>
         <h1 className='text-8xl text-center text-blue-500'>
           CENTRO DE FORMACION PROFESIONAL Nº665
@@ -187,12 +189,13 @@ const page = () => {
     <br />
     <BatciBoton />
     <br />
+    y
     <h2 className=''>
       <BotonFormulario />
     </h2>
     <br />
     <div className='flex justify-center'>
-      <Boton2 />
+         <CvBoron />
 
     </div>
     </div>

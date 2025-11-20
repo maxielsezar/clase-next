@@ -10,7 +10,7 @@ import { IoSchool } from "react-icons/io5";
 const page = () => {
   return (
     <div className='bg-white flex justify-center'>
-      <div className='text-ceentr w-180 h-170 border-4 "h-14 bg-linear-to-t from-sky-500 to-indigo-500 border-black p-10'>
+      <div className='text-ceentr w-180 h-190 border-4 "h-14 bg-linear-to-t from-sky-500 to-indigo-500 border-black p-10'>
        <Image src="/CFP-Nº-655-Blanco.png" alt="" height={70} width={70} />
      
         <h1 className='text-center text-3xl  underline'>
@@ -40,7 +40,7 @@ const page = () => {
         </label> 
         <label>
           <br />
-          <span>Numero de Telefono:  </span>
+          <span>◉ Numero de Telefono:  </span>
           <input className="input" type="telephone" placeholder="Telefono" required />
         </label>
         <label>
@@ -56,27 +56,27 @@ const page = () => {
         <div className='flex justify-center border-3'>
           <div className='bg-gray-800 w-80 h-60 border-indigo-500'>
             <h1 className='text-center "h-14 bg-linear-to-bl from-violet-500 to-fuchsia-500"'>
+              <IoSchool />
               Estudios
             </h1>
-            <IoSchool />
              <label>
-            <input className="input" type="text" placeholder="holaaaa" required />
+            <input className="input" type="text" placeholder="agragar infromacion" required />
             
           </label>
           <label>
-            <input className="input" type="text" placeholder="holaaaa" required />
+            <input className="input" type="text" placeholder="agragar infromacion" required />
             
           </label><label>
-            <input className="input" type="text" placeholder="holaaaa" required />
+            <input className="input" type="text" placeholder="agragar infromacion" required />
             
           </label><label>
-            <input className="input" type="text" placeholder="holaaaa" required />
+            <input className="input" type="text" placeholder="agragar infromacion" required />
             
           </label><label>
-            <input className="input" type="text" placeholder="holaaaa" required />
+            <input className="input" type="text" placeholder="agragar infromacion" required />
             
           </label><label>
-            <input className="input" type="text" placeholder="holaaaa" required />
+            <input className="input" type="text" placeholder="agragar infromacion" required />
             
           </label>
           <div className='flex justify-center'>
@@ -85,31 +85,32 @@ const page = () => {
           </div>
           <div className='bg-gray-800 border-3 w-80 h-60 h-14 bg-linear-to-t from-gray-800 to-gray-650'>
             <h1 className='text-center "h-14 bg-linear-to-bl from-violet-500 to-fuchsia-500"'>
+              <MdWork />
               Experiencia
             </h1>
-            <MdWork />
+           
              <label>
-            <input className="input" type="text" placeholder="holaaaa" required />
+            <input className="input" type="text" placeholder="agragar infromacion" required />
             
           </label>
            <label>
-            <input className="input" type="text" placeholder="holaaaa" required />
+            <input className="input" type="text" placeholder="agragar infromacion" required />
             
           </label>
            <label>
-            <input className="input" type="text" placeholder="holaaaa" required />
+            <input className="input" type="text" placeholder="agragar infromacion" required />
             
           </label>
           <label>
-            <input className="input" type="text" placeholder="holaaaa" required />
+            <input className="input" type="text" placeholder="agragar infromacion" required />
             
           </label>
           <label>
-            <input className="input" type="text" placeholder="holaaaa" required />
+            <input className="input" type="text" placeholder="agragar infromacion" required />
             
           </label>
           <label>
-            <input className="input" type="text" placeholder="holaaaa" required />
+            <input className="input" type="text" placeholder="agragar infromacion" required />
             
           </label>
           <div className='flex justify-center'>

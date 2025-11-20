@@ -49,7 +49,7 @@ const Form = () => {
           
             <input type="text" className="input" placeholder="Ubicacion" />
           </div>
-          <button>Subir</button>
+        
         </form>
         <div className="form-section">
         </div>
