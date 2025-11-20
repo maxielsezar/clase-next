@@ -1,6 +1,5 @@
 "use client"
 import React from 'react'
-import Header from '@/app/componentes/Nav2'
 import Main from '@/app/componentes/Main'
 import axios from "axios";
 import { useState, useEffect } from 'react' 
@@ -22,7 +21,7 @@ const page = () => {
 //mongodb+srv://naticayul_db_user:GqHsLJpHq6fa6Btl@cluster0.lnaccnw.mongodb.net/?appName=Cluster0
   return (
     <div>
-      <Header/>
+  
       <p className="text-black text-5xl text-center mt-10 mb-20"> Bolsa de empleo </p>
       <Main />
       {data.map((item, i)=>{
