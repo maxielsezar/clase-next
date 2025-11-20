@@ -1,18 +1,18 @@
-import Image from "next/image";
-import Radio from '@/app/componentes/Radio'
-import Radio2 from '@/app/componentes/Radio2'
-import ButtonSesion from '@/app/componentes/ButtonSesion'
+import React from 'react'
 
-export default function Header() {
+
+const Header = () => {
   return (
-    <>
-      <div className="flex justify-around mt-10">
-        <Image src="/cfp655.png" width={200} height={10} alt="hola"  />
-        <Radio/>
-        <Radio2/>
-        <ButtonSesion/>
-      </div>
-      <p> Bolsa de Trabajo </p>
-    </>
-  );
+ 
+      
+<header className="w-full bg-blue-600 text-white shadow-md">
+
+<h2 className="text xl font-semibold text-center"> CENTRO DE FORMACIÓN PROFESIONAL Nº 655 </h2>
+
+</header>
+
+
+  )
 }
+
+export default Header

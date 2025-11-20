@@ -3,6 +3,11 @@ import { useState } from "react";
 import Experiencia from "../models/experiencia";
 import Estudios from "../models/estudios";
 import Image from "next/image";
+import { Poppins } from "next/font/google";
+import Upload from "../componentes/Upload";
+
+
+
 
 
 export default function CargarCV() {
@@ -126,13 +131,13 @@ return;
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 p-6">
+    <div className="flex justify-center items-center min-h-screen p-6">
       <form
         onSubmit={handleSubmit}
-        className="bg-gray-100 p-8 rounded-2xl shadow-lg w-full max-w-2xl space-y-6"
+        className="p-8 rounded-2xl shadow-lg w-full max-w-2xl space-y-6"
       >
-        <h1 className="text-2xl font-bold text-center text-blue-700">
-          Cargar Curriculum Vitae
+        <h1 className="text-4xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 text-center">
+          Cargar CV
         </h1>
 
         {/* FOTO DE PERFIL */}
@@ -193,12 +198,12 @@ return;
             />
 
 
-<div className="absolute top-10 left-17">
+<div className="absolute top-60 left-17">
 
 <Image
 src="/logo2.png"
-width={230}
-height={130}
+width={210}
+height={110}
 alt="logo"
 className="center"
 />
@@ -231,8 +236,6 @@ className="center"
   </div>
 </div>
     
-
-
 
             <button
               type="button"
@@ -327,19 +330,7 @@ className="center"
           </ul>
         </div>
 
-        {/* ARCHIVO */}
-        <div>
-          <label className="block text-gray-700 font-medium mb-1">
-            Subir CV (PDF o Word)
-          </label>
-          <input
-            type="file"
-            name="archivo"
-            accept=".pdf,.doc,.docx"
-            onChange={handleChange}
-            className="w-full border rounded-lg px-3 py-2"
-          />
-        </div>
+        <Upload />
 
         {/* BOTÓN ENVIAR */}
         <button
@@ -349,6 +340,15 @@ className="center"
           Enviar CV
         </button>
       </form>
+
     </div>
+
   );
 }
+
+
+
+
+
+
+

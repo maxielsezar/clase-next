@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import Header from '@/app/componentes/Header'
+import Header from '@/app/componentes/Nav2'
 import Main from '@/app/componentes/Main'
 import axios from "axios";
 import { useState, useEffect } from 'react' 
