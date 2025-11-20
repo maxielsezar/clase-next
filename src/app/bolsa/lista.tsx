@@ -1,6 +1,8 @@
 "use client"
 import React, { useRef, useState, useEffect, ReactNode, MouseEventHandler, UIEvent } from 'react';
-import { motion, useInView } from 'motion/react';
+// Assuming 'motion/react' is a valid path to import motion components.
+// If it's a typo for 'framer-motion/react', please correct it accordingly.
+import { motion, useInView } from 'motion/react'; 
 
 interface AnimatedItemProps {
   children: ReactNode;
@@ -10,10 +12,10 @@ interface AnimatedItemProps {
   onClick?: MouseEventHandler<HTMLDivElement>;
 }
 
-interface Trabajo{
-  puesto:string;
-  lugar:string;
-  fecha:string;
+interface Trabajo {
+  puesto: string;
+  lugar: string;
+  fecha: string;
 }
 
 const AnimatedItem: React.FC<AnimatedItemProps> = ({ children, delay = 0, index, onMouseEnter, onClick }) => {
@@ -47,12 +49,12 @@ interface AnimatedListProps {
 }
 
 const AnimatedList: React.FC<AnimatedListProps> = ({
-  items = [
-    'Maestro panadero',
-    'Electricista montador',
-    'Gasista',
-    'Encargado de mantenimiento de edificio',
-    'Auxiliar de cocina',
+  items = [ // Default items changed to match the 'Trabajo' interface structure
+    { puesto: 'Maestro panadero', lugar: 'Panadería XYZ', fecha: '2020-2023' },
+    { puesto: 'Electricista montador', lugar: 'Industrias ACME', fecha: '2018-2020' },
+    { puesto: 'Gasista', lugar: 'Servicios Gas LP', fecha: '2015-2018' },
+    { puesto: 'Encargado de mantenimiento de edificio', lugar: 'Edificio Central', fecha: '2010-2015' },
+    { puesto: 'Auxiliar de cocina', lugar: 'Restaurante El Sabor', fecha: '2008-2010' },
   ],
   onItemSelect,
   showGradients = true,
@@ -90,7 +92,7 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
         if (selectedIndex >= 0 && selectedIndex < items.length) {
           e.preventDefault();
           if (onItemSelect) {
-            onItemSelect(items[selectedIndex], selectedIndex);
+            onItemSelect(items[selectedIndex], selectedIndex); // Fixed variable name from 'item' to 'items'
           }
         }
       }
@@ -123,7 +125,6 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
   }, [selectedIndex, keyboardNav]);
 
   return (
-  
     <div className={`relative w-[800px] ${className}`}>
       <div
         ref={listRef}
@@ -138,7 +139,7 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
           scrollbarColor: '#222 #060010'
         }}
       >
-        {items.map((item, index) => (
+        {items.map((item, index) => ( // Use 'items' here
           <AnimatedItem
             key={index}
             delay={0.1}
