@@ -7,9 +7,6 @@ import { Poppins } from "next/font/google";
 import Upload from "../componentes/Upload";
 
 
-
-
-
 export default function CargarCV() {
   const [ListaExperiencia, setListaExperiencia] = useState<Experiencia[]>([])
   
