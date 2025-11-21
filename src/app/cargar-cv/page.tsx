@@ -129,7 +129,8 @@ export default function CargarCV() {
   };
 
   return (
-    <div className="justify-center items-center min-h-screen p-6">
+    <div className="flex justify-center items-center min-h-screen p-6">
+      <div>
       <form
         onSubmit={handleSubmit} // Esto ahora funciona correctamente
         className="p-8 rounded-2xl shadow-lg w-full max-w-2xl space-y-6"
@@ -334,7 +335,7 @@ export default function CargarCV() {
 
           Enviar CV
           </button>
-
+</div>
 </div>
 
   );
