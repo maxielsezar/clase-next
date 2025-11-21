@@ -7,142 +7,122 @@ import { Poppins } from "next/font/google";
 import Upload from "../componentes/Upload";
 import React ,{ ChangeEvent } from 'react';
 
+
 export default function CargarCV() {
-  const [ListaExperiencia, setListaExperiencia] = useState<Experiencia[]>([])
-  
-  const [ListaEstudios, setListaEstudios] = useState<Estudios[]>([])
-  
-  const [formExperiencia,setFormExperiencia] = useState<Experiencia>({
-    id:"",
-    titulo:"",
-    descripcion:"",
+  const [ListaExperiencia, setListaExperiencia] = useState<Experiencia[]>([]);
+  const [ListaEstudios, setListaEstudios] = useState<Estudios[]>([]);
+
+  const [formExperiencia, setFormExperiencia] = useState<Experiencia>({
+    id: "",
+    titulo: "",
+    descripcion: "",
     lugar: "",
     fechaInicio: "",
-    fechaFin:""
-  })
-  
-  const [formEstudio,setFormEstudio] = useState<Estudios>({
-        id:"",
-        nombre: "",
-        instituto: "",
-        lugar: "",
-        fechaInicio: "",
-        fechaFin: ""
-})
+    fechaFin: ""
+  });
 
+  const [formEstudio, setFormEstudio] = useState<Estudios>({
+    id: "",
+    nombre: "",
+    instituto: "",
+    lugar: "",
+    fechaInicio: "",
+    fechaFin: ""
+  });
 
   const [preview, setPreview] = useState<string>("");
 
-  // Manejo de cambio general
+  // Manejador de cambios general para INPUTS y TEXTAREAS
+  // Usa ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    // Determina si el campo pertenece a Experiencia o Estudio y actualiza el estado correspondiente
+    if (Object.keys(formExperiencia).includes(name)) {
+      setFormExperiencia(prevState => ({
+        ...prevState,
+        [name]: value
+      }));
+    } else if (Object.keys(formEstudio).includes(name)) {
+       setFormEstudio(prevState => ({
+        ...prevState,
+        [name]: value
+      }));
+    }
+    // Si tienes otros formularios, puedes añadir más lógica aquí.
+  };
 
 
-// ... (otros imports y estado)
-
-const MiComponente = () => {
-  const [preview, setPreview] = useState<string | null>(null);
-
-  // Usa ChangeEvent<HTMLInputElement>
+  // Manejador para la carga de archivos (foto de perfil)
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    
-    // e.target ya es reconocido como un HTMLInputElement, por lo que 'files' existe.
-    const { files } = e.target; 
-
+    const { files } = e.target;
     if (files?.[0]) {
       const file = files[0];
       setPreview(URL.createObjectURL(file));
-    } 
+    }
   };
-  
-  return (
-    <div>
-      <input type="file" onChange={handleChange} />
-      {preview && <img src={preview} alt="Preview" />}
-    </div>
-  );
-};
+
 
   // EXPERIENCIAS
-  const handleExperienciaChange = (e:React.MouseEvent<HTMLButtonElement>) => {
-  const target=e.target as HTMLButtonElement;
-  const { name, value } = target;
-  setFormExperiencia(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
+  // Usamos handleInputChange para todos los inputs de experiencia
+  // const handleExperienciaChange = handleInputChange; // Puedes usar este alias si quieres mantener el nombre
 
   const agregarExperiencia = () => {
-const inicio=new Date(formExperiencia.fechaInicio);
-const fin=new Date(formExperiencia.fechaFin);
+    const inicio = new Date(formExperiencia.fechaInicio);
+    const fin = new Date(formExperiencia.fechaFin);
 
-if(isNaN(inicio.getTime())){
-  alert("Las fechas no son validas");
-  return;
-}
+    if (isNaN(inicio.getTime())) {
+      alert("Las fechas no son validas");
+      return;
+    }
 
-if(fin<inicio){
-
-alert("La fecha de salida no puede ser anterior a la fecha de inicio");
-return;
-
-}
+    if (fin < inicio) {
+      alert("La fecha de salida no puede ser anterior a la fecha de inicio");
+      return;
+    }
 
     if (formExperiencia.titulo && formExperiencia.descripcion && formExperiencia.lugar) {
-      if(!formExperiencia.fechaFin){formExperiencia.fechaFin="continua"}
+      if (!formExperiencia.fechaFin) { formExperiencia.fechaFin = "continua" }
       setListaExperiencia(
-        [...ListaExperiencia,formExperiencia]
-      );}
-
-   else{
+        [...ListaExperiencia, formExperiencia]
+      );
+    } else {
       alert("Completá todos los campos de la experiencia antes de agregarla.");
     }
-    };
+  };
 
-
-
-
-  const eliminarExperiencia = (indiceAEliminar:number) => {
-      const listaActualizada = [
+  const eliminarExperiencia = (indiceAEliminar: number) => {
+    const listaActualizada = [
       ...ListaExperiencia.slice(0, indiceAEliminar),
       ...ListaExperiencia.slice(indiceAEliminar + 1)
     ];
-    setListaExperiencia( listaActualizada );
+    setListaExperiencia(listaActualizada);
   };
 
   // ESTUDIOS
-  const handleEstudioChange = (e:React.MouseEvent<HTMLButtonElement>) => {
-  const target=e.target as HTMLButtonElement;
-  const { name, value } = target;
-        setFormEstudio(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  }
+  // Usamos handleInputChange para todos los inputs de estudio
+  // const handleEstudioChange = handleInputChange; // Puedes usar este alias si quieres mantener el nombre
 
   const agregarEstudio = () => {
     const { nombre, instituto } = formEstudio;
     if (nombre && instituto) {
       setListaEstudios(
-        [...ListaEstudios,formEstudio]
+        [...ListaEstudios, formEstudio]
       );
-    } 
-    else {
+    } else {
       alert("Completá ambos campos del estudio antes de agregarlo.");
     }
   };
 
-  const eliminarEstudio = (indiceAEliminar:number) => {
-
-  const listaActualizada = [
-
-  ...ListaEstudios.slice(0,indiceAEliminar),
-  ...ListaEstudios.slice(indiceAEliminar + 1)
-  ];
-  setListaEstudios(listaActualizada);
+  const eliminarEstudio = (indiceAEliminar: number) => {
+    const listaActualizada = [
+      ...ListaEstudios.slice(0, indiceAEliminar),
+      ...ListaEstudios.slice(indiceAEliminar + 1)
+    ];
+    setListaEstudios(listaActualizada);
   };
 
-
-  const handleSubmit = (e:React.MouseEvent<HTMLButtonElement>) => {
+  // Manejador del SUBMIT (ya estaba bien definido)
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Datos del formulario:", formEstudio);
     alert("Tu CV fue enviado correctamente ✅");
@@ -151,7 +131,7 @@ return;
   return (
     <div className="flex justify-center items-center min-h-screen p-6">
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmit} // Esto ahora funciona correctamente
         className="p-8 rounded-2xl shadow-lg w-full max-w-2xl space-y-6"
       >
         <h1 className="text-4xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 text-center">
@@ -178,7 +158,7 @@ return;
             type="file"
             name="foto"
             accept="image/*"
-            onChange={handleChange}
+            onChange={handleChange} // Usa handleChange para el input de tipo file
             className="text-sm text-gray-600"
           />
         </div>
@@ -194,7 +174,7 @@ return;
               type="text"
               name="titulo"
               value={formExperiencia.titulo}
-              onChange={handleExperienciaChange}
+              onChange={handleInputChange} // Usa handleInputChange
               placeholder="Título del puesto (ej: Vendedor)"
               className="w-full border rounded-lg px-3 py-2"
             />
@@ -202,58 +182,52 @@ return;
               type="text"
               name="lugar"
               value={formExperiencia.lugar}
-              onChange={handleExperienciaChange}
+              onChange={handleInputChange} // Usa handleInputChange
               placeholder="Lugar o empresa"
               className="w-full border rounded-lg px-3 py-2"
             />
             <textarea
               name="descripcion"
               value={formExperiencia.descripcion}
-              onChange={handleExperienciaChange}
+              onChange={handleInputChange} // Usa handleInputChange
               placeholder="Descripción de tareas"
               className="w-full border rounded-lg px-3 py-2"
-      
             />
 
+            <div className="absolute top-60 left-17">
+              <Image
+                src="/logo2.png"
+                width={210}
+                height={110}
+                alt="logo"
+                className="center"
+              />
+            </div>
 
-<div className="absolute top-60 left-17">
-
-<Image
-src="/logo2.png"
-width={210}
-height={110}
-alt="logo"
-className="center"
-/>
-</div>
-
-
-
-<div className="flex gap-4">
-  <div className="flex flex-col flex-1">
-    <label className="text-black text-sm mb-1">Fecha de inicio</label>
-    <input
-      type="date"
-      name="fechaInicio"
-      value={formExperiencia.fechaInicio}
-      onChange={handleExperienciaChange}
-      max={new Date().toISOString().split("T")[0]}
-      className="border rounded-lg px-3 py-2"
-    />
-  </div>
-  <div className="flex flex-col flex-1">
-    <label className="text-black text-sm mb-1">Fecha de salida</label>
-    <input
-      type="date"
-      name="fechaFin"
-      value={formExperiencia.fechaFin}
-      onChange={handleExperienciaChange}
-      max={new Date().toISOString().split("T")[0]}
-      className="border rounded-lg px-3 py-2"
-    />
-  </div>
-</div>
-    
+            <div className="flex gap-4">
+              <div className="flex flex-col flex-1">
+                <label className="text-black text-sm mb-1">Fecha de inicio</label>
+                <input
+                  type="date"
+                  name="fechaInicio"
+                  value={formExperiencia.fechaInicio}
+                  onChange={handleInputChange} // Usa handleInputChange
+                  max={new Date().toISOString().split("T")[0]}
+                  className="border rounded-lg px-3 py-2"
+                />
+              </div>
+              <div className="flex flex-col flex-1">
+                <label className="text-black text-sm mb-1">Fecha de salida</label>
+                <input
+                  type="date"
+                  name="fechaFin"
+                  value={formExperiencia.fechaFin}
+                  onChange={handleInputChange} // Usa handleInputChange
+                  max={new Date().toISOString().split("T")[0]}
+                  className="border rounded-lg px-3 py-2"
+                />
+              </div>
+            </div>
 
             <button
               type="button"
@@ -266,8 +240,7 @@ className="center"
 
           {/* Lista de experiencias */}
           <ul className="mt-4 space-y-3">
-            {
-            ListaExperiencia.map((exp, index) => (
+            {ListaExperiencia.map((exp, index) => (
               <li
                 key={index}
                 className="border rounded-lg p-3 bg-gray-50 flex justify-between items-start"
@@ -292,6 +265,9 @@ className="center"
             ))}
           </ul>
         </div>
+        {/* Agrega el resto del formulario de estudios usando handleInputChange */}
+      </form>
+
 
         {/* ESTUDIOS REALIZADOS */}
         <div>
@@ -304,7 +280,7 @@ className="center"
               type="text"
               name="nombre"
               value={formEstudio.nombre}
-              onChange={handleEstudioChange}
+              onChange={handleInputChange}
               placeholder="Nombre del estudio (ej: Lic. en Administración)"
               className="w-full border rounded-lg px-3 py-2"
             />
@@ -312,7 +288,7 @@ className="center"
               type="text"
               name="instituto"
               value={formEstudio.instituto}
-              onChange={handleEstudioChange}
+              onChange={handleInputChange}
               placeholder="Instituto o universidad"
               className="w-full border rounded-lg px-3 py-2"
             />
@@ -353,13 +329,13 @@ className="center"
         {/* BOTÓN ENVIAR */}
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
-        >
-          Enviar CV
-        </button>
-      </form>
+          className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
 
-    </div>
+
+          Enviar CV
+          </button>
+
+</div>
 
   );
 }
