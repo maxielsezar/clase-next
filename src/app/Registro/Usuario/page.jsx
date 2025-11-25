@@ -137,7 +137,7 @@ className="center"
             onChange={handleChange}
             required
             max= {new Date().toISOString().split("T")[0]}
-            className="border p-2 rounded-lg w-full max-w-[220px]"
+            className="border p-2 rounded-lg w-full max-w-[250px]"
           />
           </div>
 
