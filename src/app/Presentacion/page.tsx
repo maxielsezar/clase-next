@@ -137,8 +137,7 @@ const page = () => {
     <>
     <div className='w-full bg-gray-900 h-115'>
           <div className='flex justify-end'>
-           <Image src="/CFP-Nº-655-Blanco.png" alt="" height={70} width={70} />
-                
+           <img src="/CFP-Nº-655-Blanco.png" alt="" height={100} width={100} />     
         </div>
         <h1 className='text-8xl text-center text-blue-500'>
           CENTRO DE FORMACION PROFESIONAL Nº665

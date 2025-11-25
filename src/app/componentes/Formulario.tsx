@@ -1,5 +1,6 @@
 "use client"
 import styled from 'styled-components';
+import CvBoron from '@/app/componentes/CvBoron' 
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -27,8 +28,8 @@ const Form = () => {
       <div className="form-box">
         <form onSubmit={handleSubmit}>
           
-        <div className='w-15 h-15 flex justify-end'>
-            <img src="/cfp655.png" alt="" />
+        <div className='w-15 h-15 flex justify-end p-2.5'>
+          <img src="/CFP-Nº-655-Blanco.png" alt="" height={100} width={100} />
         </div>
           <span className="title flex justify-center">Cursos Del CFP N°655</span>
           <br />
@@ -46,10 +47,13 @@ const Form = () => {
             <input type="text" className="input" placeholder="Curso" />
             <input type="text" className="input" placeholder="Horario" />
             <input type="textArea" className="input" placeholder="Descripcion" />
-          
+            <input type="email" className="input" placeholder="Correo Electronico" />   
+            <input type="telephone" className="input" placeholder="Telefono" />
             <input type="text" className="input" placeholder="Ubicacion" />
           </div>
-        
+        <div className='flex justify-center'>
+           <CvBoron />
+        </div>
         </form>
         <div className="form-section">
         </div>
@@ -65,7 +69,7 @@ const StyledWrapper = styled.div`
   .form-box {
     max-width: 800px;
     max-height: 1000px;
-    background: #f1f7fe;
+    background: #B8E0F2;
     overflow: hidden;
     border-radius: 16px;
     color: #010101;

@@ -12,7 +12,7 @@ const page = () => {
     <div className='bg-white flex justify-center'>
       <div className='text-ceentr w-180 h-190 border-4 "h-14 bg-linear-to-t from-sky-500 to-indigo-500 border-black p-10'>
        <Image src="/CFP-Nº-655-Blanco.png" alt="" height={70} width={70} />
-     
+     <img src="/CFP-Nº-655-Blanco.png" alt="" />
         <h1 className='text-center text-3xl  underline'>
             Formulario 
         </h1>

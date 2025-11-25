@@ -5,7 +5,7 @@ const Button = () => {
   return (
     <StyledWrapper>
       <button className="shadow__btn">
-        Iniciar sesión como empresario
+        Bolsa de Empleo
       </button>
     </StyledWrapper>
   );
