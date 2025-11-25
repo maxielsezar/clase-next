@@ -17,7 +17,15 @@ export default function RegistroEmpresario() {
     nacionalidad:"",
     fechaNacimiento:"",
   });
-  
+  const [inputType, setInputType] = useState('text');
+  const handleFocus = () => {
+    setInputType('date');
+  };
+
+  const handleBlur = () => {
+    // Optionally change back to text if the field is empty, for placeholder to reappear
+    // setInputType('text'); 
+  };
   function createPost() {
     axios.post(baseURL, form)
   }
@@ -124,20 +132,21 @@ className="center"
             placeholder="Nacionalidad"
             value={form.nacionalidad}
             onChange={handleChange}
-            className="border p-2 rounded-lg w-full max-w-[295px]"
+            className="border p-2 rounded-lg w-full"
           />
 
 <div className="flex flex-col">
-            <label className="mb-1 text-sm font-medium"> Fecha de nacimiento </label>
             <input
-            type="date"
+            type={inputType}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
             name="fechaNacimiento"
             placeholder="Fecha de nacimiento"
             value={form.fechaNacimiento}
             onChange={handleChange}
             required
             max= {new Date().toISOString().split("T")[0]}
-            className="border p-2 rounded-lg w-full max-w-[300px]"
+            className="border p-2 rounded-lg w-full"
           />
           </div>
 
