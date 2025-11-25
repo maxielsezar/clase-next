@@ -136,7 +136,8 @@ className="center"
             value={form.fechaNacimiento}
             onChange={handleChange}
             required
-            className="border p-2 rounded-lg w-full"
+            max= {new Date().toISOString().split("T")[0]}
+            className="border p-2 rounded-lg w-full max-w-[220px]"
           />
           </div>
 
