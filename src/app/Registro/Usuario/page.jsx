@@ -124,7 +124,7 @@ className="center"
             placeholder="Nacionalidad"
             value={form.nacionalidad}
             onChange={handleChange}
-            className="border p-2 rounded-lg w-full"
+            className="border p-2 rounded-lg w-full max-w-[250px]"
           />
 
 <div className="flex flex-col">
@@ -137,7 +137,7 @@ className="center"
             onChange={handleChange}
             required
             max= {new Date().toISOString().split("T")[0]}
-            className="border p-2 rounded-lg w-full max-w-[250px]"
+            className="border p-2 rounded-lg w-full max-w-[290px]"
           />
           </div>
 
