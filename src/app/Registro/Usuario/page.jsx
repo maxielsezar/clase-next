@@ -48,7 +48,7 @@ export default function RegistroEmpresario() {
 <div className="absolute top-40 left-20 ">
 
 <Image
-src="/logo.jpg"
+src="/logo2.png"
 width={200}
 height={110}
 alt="logo"
@@ -59,7 +59,7 @@ className="center"
 <div className="absolute top-40 right-20 ">
 
 <Image
-src="/logo.jpg"
+src="/logo2.png"
 width={200}
 height={110}
 alt="logo"
