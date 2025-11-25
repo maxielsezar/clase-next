@@ -126,7 +126,9 @@ className="center"
             onChange={handleChange}
             className="border p-2 rounded-lg w-full"
           />
-            <label className="text-sm mb-1 block"> Fecha de nacimiento </label>
+
+<div className="flex flex-col">
+            <label className="mb-1 text-sm font-medium"> Fecha de nacimiento </label>
             <input
             type="date"
             name="fechaNacimiento"
@@ -136,6 +138,7 @@ className="center"
             required
             className="border p-2 rounded-lg w-full"
           />
+          </div>
 
           <input
             type="password"
