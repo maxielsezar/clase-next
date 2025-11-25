@@ -52,6 +52,9 @@ export default function CargarCV() {
   };
 
 
+
+  
+
   // Manejador para la carga de archivos (foto de perfil)
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { files } = e.target;
@@ -131,6 +134,17 @@ export default function CargarCV() {
   return (
     <div className="flex justify-center items-center min-h-screen p-6">
       <div>
+
+      <div className="absolute top-40 left-20 hidden md:block">
+              <Image
+                src="/logo2.png"
+                width={210}
+                height={110}
+                alt="logo"
+                className="center"
+              />
+            </div>
+
       <form
         onSubmit={handleSubmit} // Esto ahora funciona correctamente
         className="p-8 rounded-2xl shadow-lg w-full max-w-2xl space-y-6"
@@ -195,15 +209,7 @@ export default function CargarCV() {
               className="w-full border rounded-lg px-3 py-2"
             />
 
-            <div className="absolute top-60 left-17">
-              <Image
-                src="/logo2.png"
-                width={210}
-                height={110}
-                alt="logo"
-                className="center"
-              />
-            </div>
+  
 
             <div className="flex gap-4">
               <div className="flex flex-col flex-1">
@@ -237,7 +243,7 @@ export default function CargarCV() {
             >
               ➕ Agregar experiencia
             </button>
-          </div>
+       </div>
 
           {/* Lista de experiencias */}
           <ul className="mt-4 space-y-3">
@@ -267,7 +273,7 @@ export default function CargarCV() {
           </ul>
         </div>
         {/* Agrega el resto del formulario de estudios usando handleInputChange */}
-      </form>
+      
 
 
         {/* ESTUDIOS REALIZADOS */}
@@ -324,8 +330,11 @@ export default function CargarCV() {
             ))}
           </ul>
         </div>
+      
 
-        <Upload />
+
+      <Upload /> 
+
 
         {/* BOTÓN ENVIAR */}
         <button
@@ -335,10 +344,11 @@ export default function CargarCV() {
 
           Enviar CV
           </button>
-</div>
-</div>
+          </form>
+          </div>
+    </div>
 
-  );
+);
 }
 
 
