@@ -135,7 +135,7 @@ export default function CargarCV() {
     <div className="flex justify-center items-center min-h-screen p-6">
       <div>
 
-      <div className="absolute top-40 left-20 hidden md:block">
+      <div className="absolute top-40 left-20 hidden lg:block">
               <Image
                 src="/logo2.png"
                 width={210}

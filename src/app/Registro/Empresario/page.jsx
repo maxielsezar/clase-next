@@ -42,7 +42,7 @@ export default function RegistroEmpresario() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-10">
 
-<div className="absolute top-40 left-20 hidden md:block">
+<div className="absolute top-40 left-20 hidden lg:block">
 
 <Image
 src="/logo2.png"
@@ -53,7 +53,7 @@ className="center"
 />
 </div>
 
-<div className="absolute top-40 right-20 hidden md:block">
+<div className="absolute top-40 right-20 hidden lg:block">
 
 <Image
 src="/logo2.png"

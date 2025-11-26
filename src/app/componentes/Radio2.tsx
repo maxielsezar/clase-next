@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 const Radio2 = () => {
   return (
@@ -14,14 +15,24 @@ const Radio2 = () => {
         </div>
         <div className="options">
           
+
+            <Link href="/bolsa">
           <div title="Acceder a bolsa de empleo">
             <input id="Acceder a bolsa de empleo" name="option" type="radio" />
             <label className="option" htmlFor="option-1" data-txt="Acceder a bolsa de empleo" />
           </div>
+          </Link>
+
+
+
+          <Link href="/cargar-cv">
           <div title="Cargar mi CV">
+            
             <input id="Cargar mi CV" name="option" type="radio" />
+           
             <label className="option" htmlFor="option-2" data-txt="Cargar mi CV" />
           </div>
+           </Link>
         </div>
       </div>
     </StyledWrapper>
