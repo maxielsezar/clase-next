@@ -6,7 +6,7 @@ export default function TerminosPage() {
     <div className="min-h-screen py-10 px-6 flex justify-center">
       <div className=" shadow-lg rounded-2xl p-8 w-full max-w-3xl">
 
-<div className="absolute top-40 left-10 ">
+<div className="absolute top-40 left-15 hidden lg:block">
 
 <Image
 src="/logo2.png"
@@ -16,18 +16,6 @@ alt="logo"
 className="center"
 />
 </div>
-
-<div className="absolute top-40 right-10 ">
-
-<Image
-src="/logo2.png"
-width={200}
-height={110}
-alt="logo"
-className="center"
-/>
-</div>
-
 
 
 
@@ -43,8 +31,7 @@ className="center"
           </p>
 
           <p>
-            <strong>2. Uso del Servicio:</strong> El servicio ofrecido está destinado
-            exclusivamente a empresarios gastronómicos. Cualquier uso indebido o
+            <strong>2. Uso del Servicio:</strong> Cualquier uso indebido o
             con fines fraudulentos podrá dar lugar a la baja inmediata del usuario.
           </p>
 
@@ -74,8 +61,8 @@ className="center"
 
         <div className="mt-8 text-center">
           <a
-            href="/Registro/Usuarios"
-            className="text-yellow-600 hover:underline font-medium"
+            href="/registro/usuario"
+            className="text-blue-600 strong hover:underline font-medium"
           >
             ← Volver al registro
           </a>

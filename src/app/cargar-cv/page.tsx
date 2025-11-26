@@ -48,7 +48,6 @@ export default function CargarCV() {
         [name]: value
       }));
     }
-    // Si tienes otros formularios, puedes añadir más lógica aquí.
   };
 
 
@@ -124,7 +123,7 @@ export default function CargarCV() {
     setListaEstudios(listaActualizada);
   };
 
-  // Manejador del SUBMIT (ya estaba bien definido)
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Datos del formulario:", formEstudio);
@@ -146,37 +145,50 @@ export default function CargarCV() {
             </div>
 
       <form
-        onSubmit={handleSubmit} // Esto ahora funciona correctamente
+        onSubmit={handleSubmit}
         className="p-8 rounded-2xl shadow-lg w-full max-w-2xl space-y-6"
       >
         <h1 className="text-4xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 text-center">
           Cargar CV
         </h1>
 
-        {/* FOTO DE PERFIL */}
-        <div className="flex flex-col items-center">
-          <label className="block text-black font-medium mb-2">
-            Foto de perfil
-          </label>
-          {preview ? (
-            <img
-              src={preview}
-              alt="Vista previa"
-              className="w-28 h-28 object-cover rounded-full mb-3 border"
-            />
-          ) : (
-            <div className="w-28 h-28 rounded-full bg-gray-200 flex items-center justify-center mb-3">
-              <span className="text-gray-500 text-sm">Sin foto</span>
-            </div>
-          )}
-          <input
-            type="file"
-            name="foto"
-            accept="image/*"
-            onChange={handleChange} // Usa handleChange para el input de tipo file
-            className="text-sm text-gray-600"
-          />
+      <div className="flex flex-col items-center p-4">
+      <label className="block text-black font-medium mb-4">
+        Foto de perfil
+      </label>
+      
+      {/* Área de vista previa de la imagen */}
+      {preview ? (
+        <img
+          src={preview}
+          alt="Vista previa"
+          className="w-28 h-28 object-cover rounded-full mb-4 border"
+        />
+      ) : (
+        <div className="w-28 h-28 rounded-full bg-gray-200 flex items-center justify-center mb-4">
+          <span className="text-gray-500 text-sm">Sin foto</span>
         </div>
+      )}
+      
+      {/* 1. El input nativo está oculto */}
+      <input
+        type="file"
+        name="foto"
+        accept="image/*"
+        onChange={handleChange}
+        className="hidden" // Esta clase oculta el input estándar con el texto "Ningún archivo seleccionado"
+        id="file-upload"   // ID único para vincularlo con la etiqueta
+      />
+
+      {/* 2. Esta etiqueta parece y funciona como un botón */}
+      <label
+        htmlFor="file-upload" // CLAVE: El 'htmlFor' debe ser EXACTAMENTE igual al 'id' del input
+        className="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition duration-150 ease-in-out"
+      >
+        SELECCIONAR ARCHIVO
+      </label>
+    </div>
+
 
         {/* EXPERIENCIA LABORAL */}
         <div>
@@ -332,8 +344,9 @@ export default function CargarCV() {
         </div>
       
 
-
+      <div className="justify-center">
       <Upload /> 
+      </div>
 
 
         {/* BOTÓN ENVIAR */}

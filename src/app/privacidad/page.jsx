@@ -11,18 +11,7 @@ export default function PrivacidadPage() {
       <p className="text-sm text-gray-500 mb-8 text-center">Última actualización: 23 de octubre de 2025</p>
 
 
-<div className="absolute top-40 left-5 ">
-
-<Image
-src="/logo2.png"
-width={200}
-height={110}
-alt="logo"
-className="center"
-/>
-</div>
-
-<div className="absolute top-40 right-5 ">
+<div className="absolute top-40 left-5 hidden lg:block ">
 
 <Image
 src="/logo2.png"
