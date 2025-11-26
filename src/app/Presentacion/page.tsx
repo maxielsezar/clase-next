@@ -1,13 +1,12 @@
 "use client"
 import React from 'react'
-import Image from 'next/image'
 import Boton from '@/app/componentes/Boton';
+import Boton2 from '@/app/componentes/boton2'
 import BatciBoton from '@/app/componentes/BatciBoton'
-import CvBoron from '@/app/componentes/CvBoron' 
 import { BsBriefcaseFill } from "react-icons/bs";
 import { BsMegaphoneFill } from "react-icons/bs";
 import styled from 'styled-components';
-import BotonFormulario from '@/app/componentes/BotonFormulario'
+import Formulario from '@/app/componentes/Formulario'
 
 const page = () => {
 
@@ -136,7 +135,7 @@ const page = () => {
   return (
     <>
     <div className='w-full bg-gray-900 h-115'>
-          <div className='flex justify-end'>
+         <div className='flex justify-end'>
            <img src="/CFP-Nº-655-Blanco.png" alt="" height={100} width={100} />     
         </div>
         <h1 className='text-8xl text-center text-blue-500'>
@@ -188,15 +187,11 @@ const page = () => {
     <br />
     <BatciBoton />
     <br />
-    y
-    <h2 className=''>
-      <BotonFormulario />
+    <h2 className='text-4xl'>
+      COMO POSTULANTE
     </h2>
-    <br />
-    <div className='flex justify-center'>
-         <CvBoron />
-
-    </div>
+       <Formulario />
+    
     </div>
 
 </div>
@@ -204,6 +199,7 @@ const page = () => {
 </>
 
   )
+
 }
 
 export default page

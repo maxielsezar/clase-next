@@ -135,10 +135,10 @@ const page = () => {
   return (
     <>
     <div className='w-full bg-gray-900 h-115'>
-        <div className='flex justify-end'>
-          <img src="/cfp655.png" alt="" />
+         <div className='flex justify-end'>
+           <img src="/CFP-Nº-655-Blanco.png" alt="" height={100} width={100} />     
         </div>
-        <h1 className='text-8xl text-center text-blue-500'>
+        <h1 className="lg:text-8xl text-center text-blue-500 text-4xl">
           CENTRO DE FORMACION PROFESIONAL Nº665
         </h1>
     </div>
@@ -160,8 +160,11 @@ const page = () => {
           <br />
           <Boton />
     </div>
-    <div className='bg-blue-300 rounded-xl h-60 w-200 text-4xl items-center text-center'>
-        <div className='m-6'>
+    <br />
+   <div className='flex justify-center'>
+     <div>
+        <div className='bg-blue-300 border-2 border-black-600  rounded-xl h-60 w-260 text-4xl items-center text-center'>
+        <div className='m-10'>
           <BsBriefcaseFill />
         <h1 className='text-5xl'>
           Contratá personal
@@ -172,8 +175,9 @@ const page = () => {
         </p>
         </div>
     </div>
-    <div className='bg-blue-300 rounded-xl h-60 w-200 text-4xl text-center items-center'>
-        <div className='m-6'>
+    <br />
+    <div className='bg-blue-300 border-2 border-black-600  rounded-xl h-60 w-260 text-4xl text-center items-center'>
+        <div className='m-10 '>
           <BsMegaphoneFill />
         <h1 className='text-5xl'>
           Difundí a la comunidad
@@ -183,19 +187,20 @@ const page = () => {
          mobiliario de tu negocio? ¡hacéselo saber a tus colegas!
         </p>
         </div>
-    </div>
+    </div> 
+     </div>
+   </div>
     <br />
     <BatciBoton />
     <br />
     <h2 className='text-4xl'>
-      COMO POSTULANTE
+      ¿COMO POSTULARME?
     </h2>
-       <Formulario />
     <br />
     <div className='flex justify-center'>
-      <Boton2 />
-
+         <Formulario />
     </div>
+    
     </div>
 
 </div>
