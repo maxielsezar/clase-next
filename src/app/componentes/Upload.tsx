@@ -90,7 +90,6 @@ const StyledWrapper = styled.div<{ $isDragging: boolean }>`
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 400px;
       padding: 10px;
       border-radius: 8px;
       

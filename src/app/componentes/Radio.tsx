@@ -1,4 +1,5 @@
-"use client"
+"use client"; 
+
 import React from 'react';
 import styled from 'styled-components';
 
@@ -6,26 +7,31 @@ const Radio = () => {
   return (
     <StyledWrapper>
       <div className="select">
-        <div className="selected" data-default="All" data-one="option-1" data-two="option-2" data-three="option-3">
+        <div className="selected" data-default="All" data-one="Crear oferta de trabajo" data-two="Acceder a bolsa de CVs" data-three="Recomendaciones Laborales">
           Soy empresario
-          <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" className="arrow">
+          <svg xmlns="www.w3.org" height="1em" viewBox="0 0 512 512" className="arrow">
             <path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
           </svg>
-          
         </div>
         <div className="options">
           
-          <div title="Crear oferta de trabajo">
-            <input id="Crear oferta de trabajo" name="option" type="radio" />
-            <label className="option" htmlFor="option-1" data-txt="Crear oferta de trabajo" />
+          <div>
+            <input id="option-1" name="option" type="radio" />
+            <label className="option" htmlFor="option-1">
+              Crear oferta de trabajo
+            </label>
           </div>
-          <div title="Acceder a bolsa de CVs">
-            <input id="Acceder a bolsa de CVs" name="option" type="radio" />
-            <label className="option" htmlFor="option-2" data-txt="Acceder a bolsa de CVs" />
+          <div>
+            <input id="option-2" name="option" type="radio" />
+            <label className="option" htmlFor="option-2">
+              Acceder a bolsa de CVs
+            </label>
           </div>
-          <div title="Recomendaciones Laborales">
-            <input id="Recomendaciones Laborales" name="option" type="radio" />
-            <label className="option" htmlFor="option-3" data-txt="Recomendaciones Laborales" />
+          <div>
+            <input id="option-3" name="option" type="radio" />
+            <label className="option" htmlFor="option-3">
+              Recomendaciones Laborales
+            </label>
           </div>
         </div>
       </div>
@@ -38,18 +44,18 @@ const StyledWrapper = styled.div`
     width: fit-content;
     cursor: pointer;
     position: relative;
+    z-index: 1000; /* CLAVE: Un z-index alto para estar por encima de todo el nav */
     transition: 300ms;
-    color: white;
-    overflow: hidden;
+    color: white; /* Asegura que el texto sea blanco */
   }
 
   .selected {
-    background-color: #2a2f3b;
+    background-color: #2a2f3b; /* CLAVE: Color de fondo oscuro para que sea visible */
     padding: 5px;
     margin-bottom: 3px;
     border-radius: 5px;
     position: relative;
-    z-index: 100000;
+    z-index: 1; 
     font-size: 15px;
     display: flex;
     align-items: center;
@@ -63,7 +69,7 @@ const StyledWrapper = styled.div`
     transform: rotate(-90deg);
     width: 25px;
     fill: white;
-    z-index: 100000;
+    z-index: 1;
     transition: 300ms;
   }
 
@@ -72,16 +78,18 @@ const StyledWrapper = styled.div`
     flex-direction: column;
     border-radius: 5px;
     padding: 5px;
-    background-color: #2a2f3b;
-    position: relative;
-    top: -100px;
+    background-color: #2a2f3b; /* CLAVE: Fondo oscuro para los items desplegados */
+    position: absolute;
+    top: 100%;
+    left: 0;
     opacity: 0;
-    transition: 300ms;
+    pointer-events: none;
+    transition: opacity 300ms ease;
   }
 
   .select:hover > .options {
     opacity: 1;
-    top: 0;
+    pointer-events: auto;
   }
 
   .select:hover > .selected .arrow {
@@ -95,6 +103,7 @@ const StyledWrapper = styled.div`
     background-color: #2a2f3b;
     width: 150px;
     font-size: 15px;
+    color: white; /* Asegura que el texto sea blanco */
   }
   .option:hover {
     background-color: #323741;
@@ -107,29 +116,7 @@ const StyledWrapper = styled.div`
   .options label {
     display: inline-block;
   }
-  .options label::before {
-    content: attr(data-txt);
-  }
-
-  .options input[type="radio"]:checked + label {
-    display: none;
-  }
-
-  .options input[type="radio"]#all:checked + label {
-    display: none;
-  }
-
-  .select:has(.options input[type="radio"]#all:checked) .selected::before {
-    content: attr(data-default);
-  }
-  .select:has(.options input[type="radio"]#option-1:checked) .selected::before {
-    content: attr(data-one);
-  }
-  .select:has(.options input[type="radio"]#option-2:checked) .selected::before {
-    content: attr(data-two);
-  }
-  .select:has(.options input[type="radio"]#option-3:checked) .selected::before {
-    content: attr(data-three);
-  }`;
+  /* Se eliminaron las reglas de ::before y content: attr(...) */
+`;
 
 export default Radio;

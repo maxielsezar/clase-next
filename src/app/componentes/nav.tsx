@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import Radio from '@/app/componentes/Radio'
 import Radio2 from '@/app/componentes/Radio2'
