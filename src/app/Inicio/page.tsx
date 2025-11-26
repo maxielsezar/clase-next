@@ -1,5 +1,5 @@
 'use client'
-import React ,{ useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { IoEyeSharp } from "react-icons/io5";
 import { FaEyeSlash } from "react-icons/fa"; 
 import axios from 'axios';
