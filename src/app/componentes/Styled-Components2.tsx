@@ -44,7 +44,7 @@ const StyledWrapper = styled.div`
     flex-direction: column;
     gap: 10px;
     max-width: 350px;
-    background-color: #fff;
+    background-color:rgba(105, 105, 105, 0.397);
     padding: 20px;
     border-radius: 10px;
     position: relative;
@@ -133,7 +133,7 @@ const StyledWrapper = styled.div`
 
   .fancy {
     background-color: transparent;
-    border: 2px solid #cacaca;
+    border: 2px solid #00D4FF;
     border-radius: 0px;
     box-sizing: border-box;
     color: #fff;
@@ -213,7 +213,7 @@ const StyledWrapper = styled.div`
 
   .fancy:hover {
     color: white;
-    background: #cacaca;
+    background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
   }
 
   .fancy:hover::before {

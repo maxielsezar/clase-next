@@ -12,7 +12,7 @@ return(
 <br />
 <br />
 
-<div className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% p-4 text-3xl w-50">Postulate</div>
+<div className="bg-linear-to-r/hsl from-indigo-500 to-teal-400 p-4 text-3xl w-50">Postulate</div>
 <br />
 
 <div className="flex justify-center text-3xl">
@@ -30,25 +30,31 @@ return(
     <br />
 
 
-    <div className="bg-linear-to-r/hsl from-indigo-500 to-teal-400 p-6 flex justify-center">Aqui hay un instituto donde puedes realizar cursos
+    <div className="bg-linear-to-r/decreasing from-indigo-500 to-teal-400 p-8 flex justify-center">El CFP Nº 655 (Centro De Formacion Profesional)
+    <br />
+    es un instituto donde puedes realizar varios cursos <br /> que te pueden ayudar a tener futuras ofertas de trabajos
     <br />
     <br />
     <a href="https://cfp655esquel.edu.ar/cfp655/"><img src={"/CFP-Nº-655-Blanco.png"}></img></a>
      
 
-    <div className="ml-70">
+    <div className="ml-50">
 
         
         <ul>
             <li>Sede Chacabuco 1036 – Esquel – Chubut</li>
-            <li>Tel / Fax: 2945 453449</li>
+            <li>Telefono: 2945 453449</li>
             <li>
-                <a href="mailto:centro655@cfp655esquel.edu.ar">Mail: centro655@cfp655esquel.edu.ar</a>
+                <a href="mailto:centro655@cfp655esquel.edu.ar">Mail:centro655@cfp655esquel.edu.ar</a>
                 </li>
         </ul>
     </div>
     </div>
 
+
+    
+
+    
 
 
 

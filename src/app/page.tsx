@@ -27,7 +27,7 @@ export default function Home() {
       
       
    
-    <Link href="/gabi">Ir a ver gabi</Link>
+    <Link href="/tami">Ir a ver tami</Link>
    </div>
   );
 }
