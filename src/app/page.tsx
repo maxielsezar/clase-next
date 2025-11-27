@@ -134,7 +134,7 @@ const page = () => {
 ];
   return (
     <>
-    <div className='w-full bg-gray-900 h-115'>
+    <div className='w-full bg-gray-900 h-60 lg:h-115'>
          <div className='flex justify-end'>
            <img src="/CFP-Nº-655-Blanco.png" alt="" height={100} width={100} />     
         </div>
@@ -144,14 +144,13 @@ const page = () => {
     </div>
     <br />
 <div className=" text-black bg-white text-center items-center flex justify-center ">
-    <div className="">
-    </div>
+    
     <div className="pt-0">
-        <h1 className='text-center text-6xl overline'>
+        <h1 className='text-center lg:text-6xl text-4xl overline'>
             Súmate a nuestra comunidad
         </h1>
         <br />
-        <h2 className='text-center text-4xl'>
+        <h2 className='text-center lg:text-4xl text-2xl'>
             Somos una plataforma diseñada para unir empresarios de Esquel y Trevelin con talento calificado, formado en el CFP N° 655. En simples pasos y 100% GRATIS.
         </h2>
         <br />
@@ -166,10 +165,10 @@ const page = () => {
         <div className='bg-blue-300 border-2 border-black-600  rounded-xl h-60 w-260 text-4xl items-center text-center'>
         <div className='m-10'>
           <BsBriefcaseFill />
-        <h1 className='text-5xl'>
+        <h1 className='lg:text-5xl text-3xl'>
           Contratá personal
         </h1>
-        <p>
+        <p className='lg:text-3xl text-2xl'>
           ¿Necesitas personal capacitado para que trabaje en tu 
             negocio/empresa? ¡Publicá tus ofertas en un aquí!
         </p>
@@ -179,10 +178,10 @@ const page = () => {
     <div className='bg-blue-300 border-2 border-black-600  rounded-xl h-60 w-260 text-4xl text-center items-center'>
         <div className='m-10 '>
           <BsMegaphoneFill />
-        <h1 className='text-5xl'>
+        <h1 className='lg:text-5xl text-3xl'>
           Difundí a la comunidad
         </h1>
-        <p>
+        <p className='lg:text-3xl text-2xl'>
           ¿Estás vendiendo tu fondo de comercio? ¿Queres vender 
          mobiliario de tu negocio? ¡hacéselo saber a tus colegas!
         </p>
