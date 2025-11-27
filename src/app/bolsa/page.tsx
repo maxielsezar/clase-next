@@ -1,14 +1,13 @@
 "use client";
 import React, { useState } from "react";
 import AnimatedList from "./lista";
-import Cambio from "@/app/componentes/cambio";
+
 
 interface Trabajo{
   puesto:string;
   lugar:string;
   fecha:string;
 }
-
 
 
 const empleos:Trabajo[] = [
@@ -48,7 +47,7 @@ export default function Page() {
         {
 
         }
-       
+    
         <AnimatedList
           items={empleosFiltrados}
           showGradients={true}
@@ -56,8 +55,8 @@ export default function Page() {
           displayScrollbar={true}
         />
       </div>
-        <Cambio/>   
-   
+  
+
     </div>
   );
 }
