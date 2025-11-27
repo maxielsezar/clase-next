@@ -27,15 +27,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BOLSA DE EMPLEO CFP Nº655",
+  title: "Bolsa de empleo CFP 655 Esquel",
 
-  description:"Bolsa de empleo para conseguir trabajo de manera facil y rapida",
+  description:"Bolsa de empleo del Centro de Formacion Profesional 655 para conseguir trabajo o cargar tu Curriculum Vitae",
 
   authors: [{ name: "Estudiantes del CFP Nº655"}],
 
     icons:{
     icon:"/icon.png",
-    shortcut:"/favicon.ico",
+    shortcut:"/icon.png",
     apple:"apple-icon.png"
   },
 

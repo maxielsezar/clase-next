@@ -146,13 +146,10 @@ export default function CargarCV() {
 
       <form
         onSubmit={handleSubmit}
-        className="p-8 rounded-2xl shadow-lg w-full max-w-2xl space-y-6"
-      >
-        <h1 className="text-4xl font-extrabold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-500 text-center">
-          Cargar CV
-        </h1>
+        className="p-3 rounded-2xl shadow-lg w-full max-w-2xl space-y-6">
+        
 
-      <div className="flex flex-col items-center p-4">
+      <div className="flex flex-col items-center p-2">
       <label className="block text-black font-medium mb-4">
         Foto de perfil
       </label>

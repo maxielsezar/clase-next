@@ -107,13 +107,14 @@ const StyledWrapper = styled.div<{ $isDragging: boolean }>`
     flex-direction: column;
     padding: 20px 0;
     cursor: pointer;
+    background-color: green;
   }
   
   .header svg { height: 30px; }
-  .header p { text-align: center; color: black; margin-top: 10px; }
+  .header p { text-align: center; margin-top: 10px; }
   .footer { 
       cursor: pointer;
-      background-color: rgba(0, 110, 255, 0.075);
+      background-color: green;
       width: 100%;
       height: 40px;
       padding: 8px;
